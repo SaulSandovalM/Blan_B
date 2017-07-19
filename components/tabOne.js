@@ -17,7 +17,8 @@ export default class tabOne extends Component {
         <Content>
 
           <Card style={{
-            alignItems: 'center'
+            alignItems: 'center',
+            height: 250,
           }}>
             <CardItem header>
               <Text>Ser mas ahorrativo</Text>
@@ -33,11 +34,12 @@ export default class tabOne extends Component {
           </Card>
 
           <Card style={{
-            alignItems: 'center'
+            alignItems: 'center',
+            height: 200,
           }}>
             <CardItem header>
               <Icon active name="chatbubbles"/>
-              <Text style={styles.texto}>Ser mas ahorrativo</Text>
+              <Text style={styles.texto}>Dinero</Text>
             </CardItem>
             <CardItem style={{
               alignItems: 'center'

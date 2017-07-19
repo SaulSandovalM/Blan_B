@@ -11,13 +11,13 @@ export default class Cabecera extends Component {
           </Left>
           <Right>
             <Button transparent>
-              <Icon name='pin' />
+              <Icon name='pin' style={{color: 'green'}}/>
             </Button>
             <Button transparent>
-              <Icon name='person' />
+              <Icon name='person' style={{color: 'green'}}/>
             </Button>
             <Button transparent>
-              <Icon name='menu' />
+              <Icon name='menu' style={{color: 'green'}}/>
             </Button>
           </Right>
         </Header>
