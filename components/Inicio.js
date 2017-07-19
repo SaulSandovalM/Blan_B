@@ -10,11 +10,11 @@ export default class Inicio extends Component {
     return (
       <Container>
         <Cabecera/>
-      <Tabs>
+      <Tabs style={{backgroundColor="white"}}>
         <Tab heading="YO">
           <Tab1 />
         </Tab>
-        <Tab heading="Noticias">
+        <Tab heading="NOTICIAS">
           <Tab2 />
         </Tab>
       </Tabs>
