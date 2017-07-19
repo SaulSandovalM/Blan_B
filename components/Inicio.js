@@ -4,13 +4,16 @@ import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
 import Tab1 from './tabOne';
 import Tab2 from './tabTwo';
+import Ingresos from '../assets/Ingresos';
+import Gastos from '../assets/Gastos';
+import Terminos from '../assets/Terminos';
 
 export default class Inicio extends Component {
   render() {
     return (
       <Container>
         <Cabecera/>
-      <Tabs style={{backgroundColor="white"}}>
+      <Tabs>
         <Tab heading="YO">
           <Tab1 />
         </Tab>
@@ -22,9 +25,5 @@ export default class Inicio extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-
-});
 
 module.export = Inicio;
