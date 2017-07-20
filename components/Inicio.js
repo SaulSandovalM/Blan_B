@@ -7,13 +7,14 @@ import Tab2 from './tabTwo';
 import Ingresos from '../assets/Ingresos';
 import Gastos from '../assets/Gastos';
 import Terminos from '../assets/Terminos';
+import Ahorros from '../assets/Ahorros';
 
 export default class Inicio extends Component {
   render() {
     return (
       <Container>
         <Cabecera/>
-        <Gastos/>
+        <Ahorros/>
       {/*<Tabs>
         <Tab heading="YO">
           <Tab1 />
