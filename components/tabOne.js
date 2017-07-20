@@ -59,7 +59,7 @@ export default class tabOne extends Component {
                 <Text>Ingresos</Text>
             </Button>
             <Button iconLeft transparent>
-              <Icon name='alert' />
+              <Icon name='alert'/>
                 <Text>Gastos</Text>
             </Button>
             <Button iconLeft transparent>
