@@ -15,7 +15,6 @@ export default class tabOne extends Component {
     return (
       <Container>
         <Content>
-
           <Card style={{
             alignItems: 'center',
             height: 250,

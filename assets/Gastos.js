@@ -41,19 +41,18 @@ export default class Gastos extends Component {
             width: '100%'
           }}/>
           <Title style={{
-            top: 10
+            top: 10,
+            color: "black"
           }}>Gastos</Title>
-          <View style={styles.align}>
+        <View style={styles.align}>
             <TextInput style={{
               height: 40,
-              width: 200,
-              marginLeft: 10,
-              top: 30
+              width: 150,
+              marginLeft: 10
             }} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
-            <Form>
-              <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)} style={{
-                top: 26
-              }}>
+          <Form>
+              <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}
+                style={{width: 150}}>
                 <Item label="Alimentos" value="key0"/>
                 <Item label="Renta" value="key1"/>
                 <Item label="Trasporte" value="key2"/>
@@ -71,16 +70,7 @@ export default class Gastos extends Component {
             style={{ backgroundColor: '#5067FF' }}
             position="bottomRight"
             onPress={() => this.setState({ active: !this.state.active })}>
-            <Icon name="share" />
-            <Button style={{ backgroundColor: '#34A34F' }}>
-              <Icon name="logo-whatsapp" />
-            </Button>
-            <Button style={{ backgroundColor: '#3B5998' }}>
-              <Icon name="logo-facebook" />
-            </Button>
-            <Button disabled style={{ backgroundColor: '#DD5144' }}>
-              <Icon name="mail" />
-            </Button>
+            <Icon name="add" />
           </Fab>
         </View>
       </Container>

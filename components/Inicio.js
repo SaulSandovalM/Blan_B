@@ -13,14 +13,15 @@ export default class Inicio extends Component {
     return (
       <Container>
         <Cabecera/>
-      <Tabs>
+        <Gastos/>
+      {/*<Tabs>
         <Tab heading="YO">
           <Tab1 />
         </Tab>
         <Tab heading="NOTICIAS">
           <Tab2 />
         </Tab>
-      </Tabs>
+      </Tabs>*/}
     </Container>
     );
   }
