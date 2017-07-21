@@ -10,7 +10,8 @@ import {
   Icon,
   Left,
   Body,
-  Right
+  Right,
+  Fab
 } from 'native-base';
 
 export default class Ahorros extends Component {
@@ -112,6 +113,15 @@ export default class Ahorros extends Component {
             </CardItem>
           </Card>
         </Content>
+        <Fab
+          active={this.state.active}
+          direction="up"
+          containerStyle={{ }}
+          style={{ backgroundColor: '#5067FF' }}
+          position="bottomRight"
+          onPress={() => this.setState({ active: !this.state.active })}>
+          <Icon name="add" />
+        </Fab>
       </Container>
     );
   }

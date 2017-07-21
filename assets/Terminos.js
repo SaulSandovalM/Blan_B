@@ -17,6 +17,7 @@ import {
   Icon,
   Image
 } from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
 class Terminos extends Component {
   constructor(props) {
@@ -132,7 +133,7 @@ class Terminos extends Component {
                   </View>
                 </ListItem>
 
-                <Button block>
+                <Button block onPress={()=> Actions.Logg()}>
                   <Text>Acepto</Text>
                 </Button>
                 <Button block style={{

@@ -9,6 +9,7 @@ export default class Ingresos extends Component {
       text: '$'
     };
   }
+
   render() {
     return (
       <Container>
@@ -23,8 +24,10 @@ export default class Ingresos extends Component {
             top: 10,
             color: "black"
           }}>Ingreso Mensual</Title>
+
           <View style={styles.align}>
-            <TextInput style={{
+            <TextInput keyboardType='numeric'
+              style={{
               height: 40,
               width: 200,
               marginLeft: 10,
@@ -32,13 +35,15 @@ export default class Ingresos extends Component {
             }} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
             <Text style={styles.texto}>Trabajo</Text>
           </View>
+
           <View style={styles.align}>
-            <TextInput style={{
+            <TextInput keyboardType='numeric'
+              style={{
               height: 40,
               width: 200,
               marginLeft: 10,
               top: 30
-            }} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+            }} onChangeText={(text) => this.setState({text})} value={this.state.text} />
             <Text style={styles.texto}>Otros</Text>
           </View>
         </Content>
