@@ -18,9 +18,8 @@ import {
   Fab
 } from 'native-base';
 const Item = Picker.Item;
-import {Actions} from 'react-native-router-flux';
 
-export default class Gastos extends Component {
+export default class NuevoGasto extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,7 +69,7 @@ export default class Gastos extends Component {
             containerStyle={{ }}
             style={{ backgroundColor: '#5067FF' }}
             position="bottomRight"
-            onPress={() => Actions.NuevoGasto()}>
+            onPress={() => this.setState({ active: !this.state.active })}>
             <Icon name="add" />
           </Fab>
         </View>
@@ -88,4 +87,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.export = Gastos;
+module.export = NuevoGasto;

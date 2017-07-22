@@ -17,7 +17,7 @@ export default class Cabecera extends Component {
             <Button transparent onPress={()=>Actions.Perfil()}>
               <Icon name='person' style={{color: 'green'}}/>
             </Button>
-            <Button transparent>
+            <Button transparent onPress={()=>Actions.Login()}>
               <Icon name='menu' style={{color: 'green'}}/>
             </Button>
           </Right>

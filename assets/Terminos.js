@@ -133,7 +133,7 @@ class Terminos extends Component {
                   </View>
                 </ListItem>
 
-                <Button block onPress={()=> Actions.Logg()}>
+                <Button block onPress={()=> Actions.Login()}>
                   <Text>Acepto</Text>
                 </Button>
                 <Button block style={{

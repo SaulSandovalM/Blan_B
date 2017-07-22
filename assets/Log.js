@@ -23,7 +23,6 @@ class Log extends Component {
 
             <TouchableOpacity style={{margin: 10}}>
             <Icon name="logo-googleplus" style={{color: '#c71610', fontSize: 40}} />
-
             </TouchableOpacity>
 
 
@@ -37,8 +36,9 @@ class Log extends Component {
           <Item rounded style={{margin: 5, borderColor: '#f08080'}}>
             <Input placeholder='Contraseña'secureTextEntry={true} />
           </Item>
-          <Button rounded info style={{margin: 5, alignSelf:'center', backgroundColor: '#f08080'}}>
-            <Text style={{color: 'white'}} onPress={()=>Actions.Inicio()}>INGRESAR</Text>
+          <Button rounded info style={{margin: 5, alignSelf:'center', backgroundColor: '#f08080'}}
+            onPress={()=>Actions.Inicio()}>
+            <Text style={{color: 'white'}}>INGRESAR</Text>
           </Button>
           </View>
 

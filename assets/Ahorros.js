@@ -13,6 +13,7 @@ import {
   Right,
   Fab
 } from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
 export default class Ahorros extends Component {
   constructor(props) {
@@ -119,7 +120,7 @@ export default class Ahorros extends Component {
           containerStyle={{ }}
           style={{ backgroundColor: '#5067FF' }}
           position="bottomRight"
-          onPress={() => this.setState({ active: !this.state.active })}>
+          onPress={() => Actions.NuevoAhorro()}>
           <Icon name="add" />
         </Fab>
       </Container>
