@@ -1,48 +1,130 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import { CheckBox,Button,Right,Thumbnail, H1, Body,Label, List, CardItem,Card, ListItem,Container, Content,Text, Item, Input, Icon } from 'native-base';
+import {
+  Header,
+  CheckBox,
+  Button,
+  Form,
+  Right,
+  Thumbnail,
+  H1,
+  Body,
+  Label,
+  Left,
+  List,
+  CardItem,
+  Card,
+  ListItem,
+  Container,
+  Content,
+  Text,
+  Item,
+  Input,
+  Icon
+} from 'native-base';
+import Ahorros from './Ahorros';
+import Cabecera2 from './Cabecera2';
+import ActionSheet from 'react-native-actionsheet';
 
-class Perfil extends  Component{
-  render(){
-    return(
+const CANCEL_INDEX = 0
+const DESTRUCTIVE_INDEX = 4
+const options = ['Cancel', 'Femenino', 'Masculino']
+const title = 'Selecciona tu sexo'
+
+class Perfil extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      selected: ''
+    }
+    this.handlePress = this.handlePress.bind(this)
+    this.showActionSheet = this.showActionSheet.bind(this)
+  }
+
+  showActionSheet() {
+    this.ActionSheet.show()
+  }
+
+  handlePress(i) {
+    this.setState({selected: i})
+  }
+
+  render() {
+    return (
       <Container style={{backgroundColor: "white"}}>
+        <Cabecera2/>
         <Content>
-          <View style={{backgroundColor:'rgb(0,0,0)', opacity:0.6}} >
-            <Image style={{justifyContent:'center',alignItems:'center', height:140,}} source={{uri: 'https://ae01.alicdn.com/kf/HTB1YU0LRVXXXXbUXXXXq6xXFXXXz/1PC-Personalise-Square-piggy-bank-Logbook-Series-font-b-Tin-b-font-Plate-box-font-b.jpg'}}/>
+          <View style={{
+            backgroundColor: 'rgb(0,0,0)',
+            opacity: 0.6
+          }}>
+            <Image style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: 180,
+              zIndex: 1,
+              position: 'relative'
+            }} source={{
+              uri: 'https://ae01.alicdn.com/kf/HTB1YU0LRVXXXXbUXXXXq6xXFXXXz/1PC-Personalise-Square-piggy-bank-Logbook-Series-font-b-Tin-b-font-Plate-box-font-b.jpg'
+            }}/>
           </View>
-          <View style={{justifyContent:'center',alignItems:'center'}}>
-            <Thumbnail style={{  zIndex:1, position:'absolute', top:-60, borderColor:'white',borderWidth:2.5}}  square large source={{uri: 'http://pre02.deviantart.net/7f1b/th/pre/f/2014/060/6/c/vi_by_magicnaanavi-d75379v.jpg'}} />
+
+          <View style={{
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <Thumbnail style={{
+              zIndex: 2,
+              position: 'relative',
+              top: -60,
+              borderColor: 'white',
+              borderWidth: 2.5
+            }} square large source={{
+              uri: 'https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png'
+            }}/>
+
           </View>
-          <List>
+
+          <List style={{top: -50}}>
             <ListItem itemDivider>
               <Text>Info</Text>
             </ListItem>
             <ListItem >
               <Input disabled placeholder='Vi'/>
-              <Icon name='information-circle' />
+              <Icon name='information-circle'/>
             </ListItem>
             <ListItem>
               <Input disabled placeholder='Vi@leagueoflegends.com'/>
+
             </ListItem>
             <ListItem itemDivider>
               <Text>Datos de usuario</Text>
             </ListItem>
-            <ListItem >
-            <Item floatingLabel>
-              <Label>Sexo</Label>
-              <Input disabled value='Mujer'/>
-            </Item>
-            </ListItem>
-            <ListItem>
-              <Item floatingLabel>
-                <Label>Edad</Label>
-                <Input disabled value='25'/>
+
+            <Form>
+              <Item floatingLabel onPress={this.showActionSheet}>
+                <Label>Sexo</Label>
+                <Input disabled value={options[this.state.selected]}/>
               </Item>
+              <Item floatingLabel last>
+                <Label>Edad</Label>
+                <Input keyboardType='numeric'/>
+              </Item>
+            </Form>
+            <ListItem itemDivider>
+              <Text>Cuentas</Text>
             </ListItem>
+            <Ahorros/>
           </List>
+
+          <ActionSheet ref={o => this.ActionSheet = o} title={title} options={options} cancelButtonIndex={CANCEL_INDEX}
+            destructiveButtonIndex={DESTRUCTIVE_INDEX} onPress={this.handlePress}/>
         </Content>
+
       </Container>
     );
   }
+
 }
 export default Perfil;

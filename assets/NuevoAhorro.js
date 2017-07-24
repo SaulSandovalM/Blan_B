@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, Image, TextInput } from 'react-native';
+import {AppRegistry, StyleSheet, Text, Image, TextInput} from 'react-native';
 import {
+  View,
   Container,
   Content,
   Header,
@@ -34,32 +35,49 @@ export default class NuevoAhorro extends Component {
   }
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={{
+        backgroundColor: "white"
+      }}>
         <Cabecera2/>
         <Content>
+          <View>
             <Image source={imgLogo} style={styles.img}/>
-          <Title style={{
-            top: 10,
-            color: "black"
-          }}>¿Cuanto quieres ahorrar?</Title>
+          </View>
 
-          <Text style={styles.margen}>Ingresa la cantidad que deseas Ahorrar</Text>
-          <TextInput keyboardType='numeric'
-            style={styles.margen2} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+          <View>
+            <Title>¿Cuanto quieres ahorrar?</Title>
+          </View>
 
-          <Text style={styles.margen}>Nombre de su Ahorro</Text>
-          <TextInput
-            style={styles.margen2} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+          <View>
+            <Text>Ingresa la cantidad que deseas Ahorrar</Text>
+          </View>
 
-          <Text style={styles.margen}>Ingresa una imagen</Text>
-          <Button style={styles.margen3}><Text>Selecciona tu Imagen</Text></Button>
+          <View>
+            <TextInput keyboardType='numeric' onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+          </View>
+
+          <View>
+            <Text>Nombre de su Ahorro</Text>
+          </View>
+
+          <View>
+            <TextInput/>
+          </View>
+
+          <View>
+            <Text>Ingresa una imagen</Text>
+          </View>
+
+          <View>
+            <Button><Text>Selecciona Imagen</Text></Button>
+          </View>
         </Content>
 
-          <Fab active={this.state.active} direction="up" containerStyle={{}} style={{
-            backgroundColor: '#5067FF'
-          }} position="bottomRight" onPress={() => Actions.Ahorros()}>
-            <Icon name="add"/>
-          </Fab>
+        <Fab active={this.state.active} direction="up" containerStyle={{}} style={{
+          backgroundColor: '#5067FF'
+        }} position="bottomRight">
+          <Icon name="add"/>
+        </Fab>
       </Container>
     );
   }
@@ -69,22 +87,14 @@ const styles = StyleSheet.create({
   color: {
     color: "green"
   },
-  margen: {
-    marginLeft: 10,
-    top: 25
-  },
-  margen2: {
-    marginLeft: 10,
-    top: 25
-  },
-  margen3: {
-    marginLeft: 10,
-    top: 40
-  },
   img: {
     height: 200,
     width: '100%',
     flex: 1
+  },
+  View: {
+    justifyContent: 'space-around',
+    flexDirection: 'column'
   }
 });
 

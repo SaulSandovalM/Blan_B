@@ -15,7 +15,8 @@ import {
   Picker,
   Form,
   Item as FormItem,
-  Fab
+  Fab,
+  Input
 } from 'native-base';
 const Item = Picker.Item;
 import {Actions} from 'react-native-router-flux';
@@ -25,8 +26,7 @@ export default class Gastos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected1: "key1",
-      text: '$'
+      selected1: "key1"
     };
   }
   onValueChange(value : string) {
@@ -37,32 +37,21 @@ export default class Gastos extends Component {
       <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
-          <Image source={{
-            uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'
-          }} style={{
-            height: 200,
-            width: '100%'
-          }}/>
-          <Title style={{
-            top: 10,
-            color: "black"
-          }}>Gastos</Title>
-        <View style={styles.align}>
-            <TextInput style={{
-              height: 40,
-              width: 150,
-              marginLeft: 10
-            }} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+          <Image source={{uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'}}
+          style={{ height: 200, width: '100%' }}/>
+          <Title style={{ top: 10, color: "black" }}>Gastos</Title>
+          <View style={styles.align}>
+            <Input style={{ height: 40, width: 150, marginLeft: 10 }}/>
           <Form>
-              <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}
-                style={{width: 150}}>
-                <Item label="Alimentos" value="key0"/>
-                <Item label="Renta" value="key1"/>
-                <Item label="Trasporte" value="key2"/>
-                <Item label="Escuela" value="key3"/>
-                <Item label="Casa" value="key4"/>
-              </Picker>
-            </Form>
+            <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}
+            style={{width: 150}}>
+              <Item label="Alimentos" value="key0"/>
+              <Item label="Renta" value="key1"/>
+              <Item label="Trasporte" value="key2"/>
+              <Item label="Escuela" value="key3"/>
+              <Item label="Casa" value="key4"/>
+            </Picker>
+          </Form>
           </View>
         </Content>
         <View style={{ flex: 1 }}>

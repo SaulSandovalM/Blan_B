@@ -1,39 +1,81 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native';
-import { Button, Icon, Item, Input} from 'native-base';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight} from 'react-native';
+import {Container, Content, Button, Icon, Item, Input} from 'native-base';
 import imgLogo from '../imgs/planb1.jpg';
+import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
 
-class Registro extends Component{
+class Registro extends Component {
   render() {
-    return(
-      <View style={{flex: 1}}>
-        <View style={{flex: 1, alignItems: 'center', marginBottom: 10}}>
-          <Image source={imgLogo} style={{width: '100%', height: '100%'}} />
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>REGISTRO</Text>
+    return (
+      <Container>
+        <Content>
+          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around' }}>
 
-        </View>
-        <View style={{flex: 1, marginTop: 20, paddingHorizontal: 20}}>
+            <Icon name='person' style={styles.iconStyle}/>
+            <Text style={styles.regisTex}>REGISTRO</Text>
 
-      <Item rounded style={{margin: 5, borderColor: '#f08080'}}>
-        <Input placeholder='Nombre' returnKeyType= 'next'/>
-      </Item>
+            <Item rounded style={styles.inputStyle}>
+              <Input placeholder='Nombre' returnKeyType='next'/>
+            </Item>
 
-      <Item rounded style={{margin: 5, borderColor: '#f08080'}}>
-        <Input placeholder='Correo electrónico' keyboardType= 'email-address' returnKeyType= 'next'/>
-      </Item>
+            <Item rounded style={styles.inputStyle}>
+              <Input placeholder='Correo electrónico' keyboardType='email-address' returnKeyType='next'/>
+            </Item>
 
-      <Item rounded style={{margin: 5, borderColor: '#f08080'}}>
-        <Input placeholder='Contraseña' secureTextEntry={true} />
-      </Item>
+            <Item rounded style={styles.inputStyle}>
+              <Input placeholder='Contraseña' secureTextEntry={true}/>
+            </Item>
 
-      <Button rounded info style={{margin: 5, alignSelf:'center', backgroundColor: '#f08080'}}>
-        <Text style={{color: 'white'}}>CREAR CUENTA</Text>
-      </Button>
-      </View>
-      <Text style={{marginBottom: 10, alignSelf:'center'}} onPress={()=>Actions.Logg()}>¿Ya tienes cuenta?, INGRESA</Text>
-      </View>
+            <Button rounded block style={styles.buttonStyle}>
+              <Text style={{ color: 'white' }}>CREAR CUENTA</Text>
+            </Button>
+
+            <View style={styles.footerStyle}>
+              <Text>¿Ya tienes cuenta?,
+              </Text>
+              <Text style={{ fontWeight: 'bold' }} onPress={()=>Actions.Login()}>INGRESA</Text>
+            </View>
+          </View>
+        </Content>
+      </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop: 10,
+    backgroundColor: '#f08080'
+  },
+  inputStyle: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop: 10,
+    borderColor: '#f08080'
+  },
+  iconStyle: {
+    fontSize: 100,
+    color: '#f08080',
+    alignSelf: 'center'
+  },
+  regisTex: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: 15,
+    marginTop: 10
+  },
+  footerStyle: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 10,
+    marginTop: 10
+  }
+
+})
 export default Registro;
