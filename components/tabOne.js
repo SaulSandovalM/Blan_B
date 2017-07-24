@@ -14,7 +14,7 @@ import {Actions} from 'react-native-router-flux';
 export default class tabOne extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Content>
           <Card style={{
             alignItems: 'center',

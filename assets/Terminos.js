@@ -69,7 +69,7 @@ class Terminos extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Content>
             <CardItem header>
               <Text style={{

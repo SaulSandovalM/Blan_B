@@ -16,7 +16,7 @@ import {Actions} from 'react-native-router-flux';
 class Login extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Content>
           <Image source={imgLogo} style={styles.image}/>
 

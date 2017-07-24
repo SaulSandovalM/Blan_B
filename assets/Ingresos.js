@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
 import Cabecera2 from './Cabecera2';
+import imgLogo from '../imgs/ingreso.jpg';
 
 export default class Ingresos extends Component {
   constructor(props) {
@@ -13,15 +14,10 @@ export default class Ingresos extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
-          <Image source={{
-            uri: 'http://www.alcaldesdemexico.com/wp-content/uploads/2015/10/Ley_de_Ingresos_2016_Alcaldes_de_Mexico_Octubre_2015.jpg'
-          }} style={{
-            height: 200,
-            width: '100%'
-          }}/>
+          <Image source={imgLogo} style={styles.img}/>
           <Title style={{
             top: 10,
             color: "black"
@@ -64,6 +60,10 @@ const styles = StyleSheet.create({
   texto: {
     fontSize: 20,
     top: 32
+  },
+  img: {
+    height: 200,
+    width: '100%'
   }
 });
 

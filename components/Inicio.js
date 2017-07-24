@@ -15,7 +15,7 @@ import Registro from '../assets/Registro';
 export default class Inicio extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Cabecera/>
       <Tabs>
         <Tab heading="YO">

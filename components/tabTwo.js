@@ -5,7 +5,7 @@ import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left
 export default class tabTwo extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Content>
           <Card style={{flex: 0}}>
             <CardItem>

@@ -34,7 +34,7 @@ export default class Gastos extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
           <Image source={{

@@ -30,7 +30,7 @@ export default class Ahorros extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
           <Card>
