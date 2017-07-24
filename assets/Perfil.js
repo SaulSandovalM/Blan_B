@@ -22,7 +22,6 @@ import {
   Input,
   Icon
 } from 'native-base';
-import Ahorros from './Ahorros';
 import Cabecera2 from './Cabecera2';
 import ActionSheet from 'react-native-actionsheet';
 
@@ -115,7 +114,6 @@ class Perfil extends Component {
             <ListItem itemDivider>
               <Text>Cuentas</Text>
             </ListItem>
-            <Ahorros/>
           </List>
 
           <ActionSheet ref={o => this.ActionSheet = o} title={title} options={options} cancelButtonIndex={CANCEL_INDEX}

@@ -41,7 +41,7 @@ export default class Gastos extends Component {
           style={{ height: 200, width: '100%' }}/>
           <Title style={{ top: 10, color: "black" }}>Gastos</Title>
           <View style={styles.align}>
-            <Input style={{ height: 40, width: 150, marginLeft: 10 }}/>
+            <Input placeholder='$' keyboardType='numeric' style={{ height: 40, width: 150, marginLeft: 10 }}/>
           <Form>
             <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}
             style={{width: 150}}>
