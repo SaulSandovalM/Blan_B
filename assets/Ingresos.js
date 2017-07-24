@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
+import Cabecera2 from './Cabecera2';
 
 export default class Ingresos extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class Ingresos extends Component {
   render() {
     return (
       <Container>
+        <Cabecera2/>
         <Content>
           <Image source={{
             uri: 'http://www.alcaldesdemexico.com/wp-content/uploads/2015/10/Ley_de_Ingresos_2016_Alcaldes_de_Mexico_Octubre_2015.jpg'

@@ -17,6 +17,8 @@ import {
   Fab
 } from 'native-base';
 const Item = Picker.Item;
+import Cabecera2 from './Cabecera2';
+import imgLogo from '../imgs/Ahorro.png';
 import {Actions} from 'react-native-router-flux';
 
 export default class NuevoAhorro extends Component {
@@ -33,14 +35,9 @@ export default class NuevoAhorro extends Component {
   render() {
     return (
       <Container>
+        <Cabecera2/>
         <Content>
-          <Image source={{
-            uri: 'http://www.zaveapp.com/hs-fs/hubfs/cerdito_playero.png?t=1499964087431&width=320&name=cerdito_playero.png'
-          }} style={{
-            height: 200,
-            width: '100%',
-            flex: 1
-          }}/>
+            <Image source={imgLogo} style={styles.img}/>
           <Title style={{
             top: 10,
             color: "black"
@@ -84,6 +81,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     top: 40
   },
+  img: {
+    height: 200,
+    width: '100%',
+    flex: 1
+  }
 });
 
 module.export = NuevoAhorro;

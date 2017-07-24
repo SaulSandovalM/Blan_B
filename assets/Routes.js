@@ -9,7 +9,6 @@ import Perfil from './Perfil';
 import Login from './Login';
 import Registro from './Registro';
 import Inicio from '../components/Inicio';
-import NuevoGasto from './NuevoGasto';
 import NuevoAhorro from './NuevoAhorro';
 
 const Routes = () => {
@@ -24,7 +23,6 @@ const Routes = () => {
         <Scene key="Ingresos" header={null} component={Ingresos}/>
         <Scene key="Gastos" header={null} component={Gastos}/>
         <Scene key="Ahorros" header={null} component={Ahorros}/>
-        <Scene key="NuevoGasto" header={null} component={NuevoGasto}/>
         <Scene key="NuevoAhorro" header={null} component={NuevoAhorro}/>
       </Scene>
     </Router>

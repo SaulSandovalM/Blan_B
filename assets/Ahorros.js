@@ -13,6 +13,8 @@ import {
   Right,
   Fab
 } from 'native-base';
+import imgLogo from '../imgs/Ahorro.png';
+import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
 
 export default class Ahorros extends Component {
@@ -29,6 +31,7 @@ export default class Ahorros extends Component {
   render() {
     return (
       <Container>
+        <Cabecera2/>
         <Content>
           <Card>
             <CardItem>
@@ -40,13 +43,7 @@ export default class Ahorros extends Component {
               </Left>
             </CardItem>
             <CardItem cardBody>
-              <Image source={{
-                uri: 'http://www.zaveapp.com/hs-fs/hubfs/cerdito_playero.png?t=1499964087431&width=320&name=cerdito_playero.png'
-              }} style={{
-                height: 200,
-                width: '100%',
-                flex: 1
-              }}/>
+              <Image source={imgLogo} style={styles.img}/>
             </CardItem>
             <CardItem>
               <Left>
@@ -68,13 +65,7 @@ export default class Ahorros extends Component {
               </Left>
             </CardItem>
             <CardItem cardBody>
-              <Image source={{
-                uri: 'http://www.zaveapp.com/hs-fs/hubfs/cerdito_playero.png?t=1499964087431&width=320&name=cerdito_playero.png'
-              }} style={{
-                height: 200,
-                width: '100%',
-                flex: 1
-              }}/>
+              <Image source={imgLogo} style={styles.img}/>
             </CardItem>
             <CardItem>
               <Left>
@@ -96,13 +87,7 @@ export default class Ahorros extends Component {
               </Left>
             </CardItem>
             <CardItem cardBody>
-              <Image source={{
-                uri: 'http://www.zaveapp.com/hs-fs/hubfs/cerdito_playero.png?t=1499964087431&width=320&name=cerdito_playero.png'
-              }} style={{
-                height: 200,
-                width: '100%',
-                flex: 1
-              }}/>
+              <Image source={imgLogo} style={styles.img}/>
             </CardItem>
             <CardItem>
               <Left>
@@ -136,6 +121,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "green",
     alignItems: 'center'
+  },
+  img: {
+    height: 200,
+    width: '100%',
+    flex: 1
   }
 });
 

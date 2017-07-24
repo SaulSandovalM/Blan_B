@@ -19,6 +19,7 @@ import {
 } from 'native-base';
 const Item = Picker.Item;
 import {Actions} from 'react-native-router-flux';
+import Cabecera2 from './Cabecera2';
 
 export default class Gastos extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ export default class Gastos extends Component {
   render() {
     return (
       <Container>
+        <Cabecera2/>
         <Content>
           <Image source={{
             uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'
@@ -69,8 +71,7 @@ export default class Gastos extends Component {
             direction="up"
             containerStyle={{ }}
             style={{ backgroundColor: '#5067FF' }}
-            position="bottomRight"
-            onPress={() => Actions.NuevoGasto()}>
+            position="bottomRight">
             <Icon name="add" />
           </Fab>
         </View>

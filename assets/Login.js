@@ -10,7 +10,7 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import {Button, Icon, Item, Input, Content, Container} from 'native-base';
-import imgLogo from '../imgs/planb1.jpg';
+import imgLogo from '../imgs/Logo.png';
 import {Actions} from 'react-native-router-flux';
 
 class Login extends Component {
@@ -18,7 +18,6 @@ class Login extends Component {
     return (
       <Container>
         <Content>
-
           <Image source={imgLogo} style={styles.image}/>
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-around'}}>
