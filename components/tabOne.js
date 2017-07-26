@@ -9,6 +9,7 @@ import {
   Icon,
   Button
 } from 'native-base';
+import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
 
 export default class tabOne extends Component {
@@ -53,22 +54,8 @@ export default class tabOne extends Component {
             </CardItem>
           </Card>
 
-          <View style={styles.align}>
-            <Button iconLeft transparent onPress={()=>Actions.Ingresos()}>
-              <Icon name='cash' />
-                <Text>Ingresos</Text>
-            </Button>
-            <Button iconLeft transparent onPress={()=>Actions.Gastos()}>
-              <Icon name='alert'/>
-                <Text>Gastos</Text>
-            </Button>
-            <Button iconLeft transparent onPress={()=>Actions.Ahorros()}>
-              <Icon name='beaker' />
-                <Text>Ahorros</Text>
-            </Button>
-          </View>
-
         </Content>
+        <Footers/>
       </Container>
 
     );

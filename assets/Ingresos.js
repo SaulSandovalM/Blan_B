@@ -44,8 +44,10 @@ export default class Ingresos extends Component {
                 <Input placeholder='$' keyboardType='numeric' returnKeyType='next'/>
               </Item>
             </View>
+          </View>
+        </Content>
 
-            <View>
+            {/*<View>
               <Text style={styles.texto}>Otros</Text>
             </View>
 
@@ -54,8 +56,6 @@ export default class Ingresos extends Component {
                 <Input placeholder='$' keyboardType='numeric' returnKeyType='next'/>
               </Item>
             </View>
-          </View>
-        </Content>
 
         <Fab
           direction="up"
@@ -63,7 +63,7 @@ export default class Ingresos extends Component {
           style={{ backgroundColor: '#5067FF' }}
           position="bottomRight">
           <Icon name="add" />
-        </Fab>
+        </Fab>*/}
       </Container>
     );
   }
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     borderColor: '#f08080'
   },
   texto: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
     alignSelf: 'center',
     marginBottom: 15,

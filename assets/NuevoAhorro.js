@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, Image, TextInput} from 'react-native';
+import {AppRegistry, StyleSheet, Text, Image } from 'react-native';
 import {
   View,
   Container,
@@ -13,11 +13,10 @@ import {
   Title,
   Tab,
   Tabs,
-  Picker,
-  Item as FormItem,
-  Fab
+  Item,
+  Fab,
+  Input
 } from 'native-base';
-const Item = Picker.Item;
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/Ahorro.png';
 import {Actions} from 'react-native-router-flux';
@@ -27,7 +26,6 @@ export default class NuevoAhorro extends Component {
     super(props);
     this.state = {
       selected1: "key1",
-      text: '$'
     };
   }
   onValueChange(value : string) {
@@ -35,47 +33,44 @@ export default class NuevoAhorro extends Component {
   }
   render() {
     return (
-      <Container style={{
-        backgroundColor: "white"
-      }}>
+      <Container style={{ backgroundColor: "white" }}>
         <Cabecera2/>
         <Content>
-          <View>
             <Image source={imgLogo} style={styles.img}/>
-          </View>
 
           <View>
             <Title>¿Cuanto quieres ahorrar?</Title>
           </View>
 
+          <View style={styles.inputStyle}>
           <View>
-            <Text>Ingresa la cantidad que deseas Ahorrar</Text>
+            <Text style={styles.texto}>Ingresa la cantidad que deseas Ahorrar</Text>
           </View>
 
           <View>
-            <TextInput keyboardType='numeric' onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+            <Item rounded style={styles.input}>
+              <Input placeholder='$' keyboardType='numeric'/>
+            </Item>
           </View>
 
           <View>
-            <Text>Nombre de su Ahorro</Text>
+            <Text style={styles.texto}>Nombre de su Ahorro</Text>
           </View>
 
           <View>
-            <TextInput/>
+            <Item rounded style={styles.input}>
+              <Input placeholder='Nombre' keyboardType='numeric'/>
+            </Item>
           </View>
-
-          <View>
-            <Text>Ingresa una imagen</Text>
-          </View>
-
-          <View>
-            <Button><Text>Selecciona Imagen</Text></Button>
-          </View>
+        </View>
         </Content>
 
-        <Fab active={this.state.active} direction="up" containerStyle={{}} style={{
-          backgroundColor: '#5067FF'
-        }} position="bottomRight">
+        <Fab
+          active={this.state.active}
+          direction="up"
+          containerStyle={{}}
+          style={{ backgroundColor: '#5067FF' }}
+          position="bottomRight">
           <Icon name="add"/>
         </Fab>
       </Container>
@@ -92,10 +87,28 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1
   },
-  View: {
-    justifyContent: 'space-around',
-    flexDirection: 'column'
-  }
+  inputStyle: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop: 10,
+    borderColor: '#f08080',
+    alignItems: 'center'
+  },
+  input: {
+    width: '80%',
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop: 10,
+    borderColor: '#f08080',
+    marginTop: 10,
+  },
+  texto: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    alignSelf: 'center'
+  },
 });
 
 module.export = NuevoAhorro;

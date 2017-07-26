@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
 import {
   Container,
   Content,
@@ -14,11 +14,10 @@ import {
   Tabs,
   Picker,
   Form,
-  Item as FormItem,
+  Item,
   Fab,
   Input
 } from 'native-base';
-const Item = Picker.Item;
 import {Actions} from 'react-native-router-flux';
 import Cabecera2 from './Cabecera2';
 
@@ -39,22 +38,40 @@ export default class Gastos extends Component {
         <Content>
           <Image source={{uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'}}
           style={{ height: 200, width: '100%' }}/>
+
           <Title style={{ top: 10, color: "black" }}>Gastos</Title>
-          <View style={styles.align}>
-            <Input placeholder='$' keyboardType='numeric' style={{ height: 40, width: 150, marginLeft: 10 }}/>
-          <Form>
-            <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1} onValueChange={this.onValueChange.bind(this)}
-            style={{width: 150}}>
+
+          <View style={styles.inputStyle}>
+            <Item rounded style={styles.input}>
+              <Input placeholder='$' keyboardType='numeric'/>
+            </Item>
+
+            <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)} style={{width: 100, top: 6}}>
               <Item label="Alimentos" value="key0"/>
               <Item label="Renta" value="key1"/>
               <Item label="Trasporte" value="key2"/>
               <Item label="Escuela" value="key3"/>
               <Item label="Casa" value="key4"/>
             </Picker>
-          </Form>
+          </View>
+
+          <View style={styles.inputStyle}>
+            <Item rounded style={styles.input}>
+              <Input placeholder='$' keyboardType='numeric'/>
+            </Item>
+
+            <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)} style={{width: 100, top: 6}}>
+              <Item label="Alimentos" value="key0"/>
+              <Item label="Renta" value="key1"/>
+              <Item label="Trasporte" value="key2"/>
+              <Item label="Escuela" value="key3"/>
+              <Item label="Casa" value="key4"/>
+            </Picker>
           </View>
         </Content>
-        <View style={{ flex: 1 }}>
+
           <Fab
             active={this.state.active}
             direction="up"
@@ -63,7 +80,6 @@ export default class Gastos extends Component {
             position="bottomRight">
             <Icon name="add" />
           </Fab>
-        </View>
       </Container>
     );
   }
@@ -73,8 +89,19 @@ const styles = StyleSheet.create({
   color: {
     color: "green"
   },
-  align: {
+  inputStyle: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop: 10,
+    borderColor: '#f08080',
     flexDirection: 'row'
+  },
+  input: {
+    marginTop: 10,
+    borderColor: '#f08080',
+    height: 40,
+    width: 150
   }
 });
 
