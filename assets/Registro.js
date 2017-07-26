@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight} from 'react-native';
 import {Container, Content, Button, Icon, Item, Input} from 'native-base';
-import imgLogo from '../imgs/planb1.jpg';
 import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
 

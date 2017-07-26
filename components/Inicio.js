@@ -9,7 +9,6 @@ import Gastos from '../assets/Gastos';
 import Terminos from '../assets/Terminos';
 import Ahorros from '../assets/Ahorros';
 import Perfil from '../assets/Perfil';
-import Log from '../assets/Log';
 import Registro from '../assets/Registro';
 
 export default class Inicio extends Component {
