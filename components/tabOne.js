@@ -3,24 +3,18 @@ import {AppRegistry, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { Container, Content, Card, CardItem, Body, Icon, Button } from 'native-base';
 import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
+import Grafica from '../assets/Grafica';
 
 export default class tabOne extends Component {
   render() {
     return (
       <Container style={{backgroundColor: "white"}}>
         <Content>
-          <Card style={{
-            alignItems: 'center',
-            height: 250,
-          }}>
+          <Card style={{ alignItems: 'center', height: 250 }}>
             <CardItem header>
               <Text>Ser mas ahorrativo</Text>
             </CardItem>
-            <CardItem>
-              <Body>
-                <Text></Text>
-              </Body>
-            </CardItem>
+
             <CardItem footer>
               <Text style={styles.color}>0%</Text>
             </CardItem>
@@ -62,13 +56,12 @@ export default class tabOne extends Component {
           </Card>
 
           <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
+            <Button iconLeft transparent onPress={()=>Actions.Grafica()} style={styles.boton} >
               <Icon name='beaker' />
                 <Text>Ahorros</Text>
             </Button>
           </Card>
           </View>
-
         </Content>
       </Container>
 

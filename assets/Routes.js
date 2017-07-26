@@ -10,6 +10,7 @@ import Login from './Login';
 import Registro from './Registro';
 import Inicio from '../components/Inicio';
 import NuevoAhorro from './NuevoAhorro';
+import Grafica from './Grafica';
 
 const Routes = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
         <Scene key="Gastos" header={null} component={Gastos}/>
         <Scene key="Ahorros" header={null} component={Ahorros}/>
         <Scene key="NuevoAhorro" header={null} component={NuevoAhorro}/>
+        <Scene key="Grafica" header={null} component={Grafica}/>
       </Scene>
     </Router>
   );
