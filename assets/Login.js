@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Button, Icon, Item, Input, Container, Content} from 'native-base';
 import {firebaseRef} from './Firebase';
-import imgLogo from '../imgs/Logo.png';
+import imgLogo from '../imgs/planb.png';
 import {Actions} from 'react-native-router-flux';
 
 class Login extends Component {
@@ -56,7 +56,8 @@ class Login extends Component {
               <Input placeholder='Contraseña' secureTextEntry={true}
                 onChangeText={(text) => this.setState({password: text})} value={this.state.password}/>
             </Item>
-            <Button rounded block style={styles.buttonIngreso} onPress={this._login}>
+            <Button rounded block style={{marginRight: 40, marginLeft: 40, marginBottom: 10, backgroundColor: '#4DA49B'}}
+               onPress={this._login}>
               <Text style={{ color: 'white' }}>INGRESAR</Text>
             </Button>
 
@@ -76,32 +77,14 @@ class Login extends Component {
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: 350
+    height: 300
   },
   inputRounded: {
     marginRight: 40,
     marginLeft: 40,
     marginBottom: 10,
-    borderColor: '#f08080'
+    borderColor: '#7EAD47'
   },
-  buttonIngreso: {
-    marginRight: 40,
-    marginLeft: 40,
-    marginBottom: 10,
-    backgroundColor: '#f08080'
-  },
-  inputRounded: {
-    marginRight: 40,
-    marginLeft: 40,
-    marginBottom: 10,
-    borderColor: '#f08080'
-  },
-  buttonIngreso: {
-    marginRight: 40,
-    marginLeft: 40,
-    marginBottom: 10,
-    backgroundColor: '#f08080'
-  }
 });
 
 export default Login;

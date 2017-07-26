@@ -56,7 +56,7 @@ export default class tabOne extends Component {
           </Card>
 
           <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Grafica()} style={styles.boton} >
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
               <Icon name='beaker' />
                 <Text>Ahorros</Text>
             </Button>

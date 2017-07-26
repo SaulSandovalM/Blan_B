@@ -3,7 +3,7 @@ import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import { Header,CheckBox,Button,Form, Right,Thumbnail, H1, Body,Label, Left, List, CardItem,Card, ListItem,Container, Content,Text, Item, Input, Icon } from 'native-base';
 import ActionSheet from 'react-native-actionsheet';
 import Imagen from './Imagen';
-
+import Cabecera2 from './Cabecera2';
 const CANCEL_INDEX = 0
 const DESTRUCTIVE_INDEX = 4
 const options = [ 'Cancel', 'Femenino', 'Masculino']
@@ -29,10 +29,11 @@ class Perfil extends  Component{
       selected: i
     })
   }
-  
+
   render(){
     return(
       <Container>
+        <Cabecera2/>
       <Content>
       <View style={{ backgroundColor:'rgb(0,0,0)', opacity:0.6}} >
         <Image style={{  justifyContent:'center',alignItems:'center', height:180,}} source={{uri: 'https://ae01.alicdn.com/kf/HTB1YU0LRVXXXXbUXXXXq6xXFXXXz/1PC-Personalise-Square-piggy-bank-Logbook-Series-font-b-Tin-b-font-Plate-box-font-b.jpg'}}/>

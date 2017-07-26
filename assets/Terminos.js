@@ -152,7 +152,7 @@ class Terminos extends Component {
 const styles = StyleSheet.create({
   check: {
     justifyContent: 'space-between'
-  }
+  },
 });
 
 export default Terminos;
