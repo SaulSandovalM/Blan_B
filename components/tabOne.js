@@ -1,14 +1,6 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Dimensions} from 'react-native';
-import {
-  Container,
-  Content,
-  Card,
-  CardItem,
-  Body,
-  Icon,
-  Button
-} from 'native-base';
+import { Container, Content, Card, CardItem, Body, Icon, Button } from 'native-base';
 import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
 
@@ -54,8 +46,30 @@ export default class tabOne extends Component {
             </CardItem>
           </Card>
 
+          <View style={styles.align}>
+            <Card style={styles.borde}>
+            <Button iconLeft transparent onPress={()=>Actions.Ingresos()} style={styles.boton}>
+              <Icon name='cash' />
+                <Text>Ingresos</Text>
+            </Button>
+          </Card>
+
+          <Card style={styles.borde}>
+            <Button iconLeft transparent onPress={()=>Actions.Gastos()} style={styles.boton}>
+              <Icon name='alert'/>
+                <Text>Gastos</Text>
+            </Button>
+          </Card>
+
+          <Card style={styles.borde}>
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
+              <Icon name='beaker' />
+                <Text>Ahorros</Text>
+            </Button>
+          </Card>
+          </View>
+
         </Content>
-        <Footers/>
       </Container>
 
     );
@@ -78,6 +92,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     justifyContent: 'space-around',
+    borderColor: 'green'
+  },
+  borde: {
+    width: '33%',
+    height: 100,
+    justifyContent: 'center'
   }
 });
 
