@@ -11,6 +11,7 @@ import Registro from './Registro';
 import Inicio from '../components/Inicio';
 import NuevoAhorro from './NuevoAhorro';
 import Grafica from './Grafica';
+import Tips from './Tips';
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
         <Scene key="Ahorros" header={null} component={Ahorros}/>
         <Scene key="NuevoAhorro" header={null} component={NuevoAhorro}/>
         <Scene key="Grafica" header={null} component={Grafica}/>
+        <Scene key="Tips" header={null} component={Tips}/>
       </Scene>
     </Router>
   );

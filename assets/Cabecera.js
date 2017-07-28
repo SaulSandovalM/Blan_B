@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
 import {Actions} from 'react-native-router-flux';
+import imgLogo from '../imgs/planb.png';
 
 export default class Cabecera extends Component {
   render() {
     return (
         <Header style={{backgroundColor: "white"}}>
           <Left>
-            <Title style={{color: 'black'}}>Plan_B</Title>
+            <Image source={imgLogo} style={styles.image}/>
           </Left>
           <Right>
-            <Button transparent>
+            <Button transparent onPress={()=>Actions.Tips()}>
               <Icon name='pin' style={{color: 'green'}}/>
             </Button>
             <Button transparent onPress={()=>Actions.Perfil()}>
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
   color: {
     color: "green"
   },
+  image: {
+    width: 150,
+    height: 60
+  }
 });
 
 module.export = Cabecera;
