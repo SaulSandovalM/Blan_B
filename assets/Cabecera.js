@@ -8,9 +8,9 @@ export default class Cabecera extends Component {
   render() {
     return (
         <Header style={{backgroundColor: "white"}}>
-          <Left>
+          
             <Image source={imgLogo} style={styles.image}/>
-          </Left>
+
           <Right>
             <Button transparent onPress={()=>Actions.Tips()}>
               <Icon name='pin' style={{color: 'green'}}/>

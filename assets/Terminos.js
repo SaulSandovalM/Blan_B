@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Header, CheckBox, Button, Body, List, CardItem, Card, ListItem, Container, Content, Text, Item, Input, Icon, Image} from 'native-base';
 import {Actions} from 'react-native-router-flux';
+import Cabecera3 from './Cabecera3';
 
 class Terminos extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class Terminos extends Component {
     return (
       <Container style={{backgroundColor: "white"}}>
         <Content>
-          <Header/>
+          <Cabecera3/>
             <CardItem header>
               <Text style={{fontWeight: 'bold'}}>Términos y condiciones</Text>
             </CardItem>
