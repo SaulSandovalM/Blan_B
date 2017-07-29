@@ -56,7 +56,7 @@ export default class tabOne extends Component {
           </Card>
 
           <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton}>
               <Icon name='beaker' />
                 <Text>Ahorros</Text>
             </Button>
@@ -64,7 +64,6 @@ export default class tabOne extends Component {
           </View>
         </Content>
       </Container>
-
     );
   }
 }
@@ -84,14 +83,19 @@ const styles = StyleSheet.create({
   align: {
     flexDirection: 'row',
     justifyContent: 'center',
-    justifyContent: 'space-around',
-    borderColor: 'green'
+    alignItems: 'center'
   },
   borde: {
     width: '33%',
     height: 100,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  boton: {
+    flex: 1,
+    flexDirection: 'column',
     justifyContent: 'center'
-  }
+  },
 });
 
 module.export = tabOne;
