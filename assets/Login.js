@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginRight: 40,
     marginLeft: 40,
     marginBottom: 10,
-    borderColor: '#7EAD47'
+    borderColor: '#4DA49B'
   },
 });
 

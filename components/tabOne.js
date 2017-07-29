@@ -44,21 +44,21 @@ export default class tabOne extends Component {
             <Card style={styles.borde}>
             <Button iconLeft transparent onPress={()=>Actions.Ingresos()} style={styles.boton}>
               <Icon name='cash' />
-                <Text>Ingresos</Text>
+                <Text sttle={styles.texto}>Ingresos</Text>
             </Button>
           </Card>
 
           <Card style={styles.borde}>
             <Button iconLeft transparent onPress={()=>Actions.Gastos()} style={styles.boton}>
               <Icon name='alert'/>
-                <Text>Gastos</Text>
+                <Text style={styles.texto2}>Gastos</Text>
             </Button>
           </Card>
 
           <Card style={styles.borde}>
             <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton}>
               <Icon name='beaker' />
-                <Text>Ahorros</Text>
+                <Text style={styles.texto3}>Ahorros</Text>
             </Button>
           </Card>
           </View>
@@ -70,11 +70,19 @@ export default class tabOne extends Component {
 
 const styles = StyleSheet.create({
   texto: {
-    color: "green",
+    color: "#D27D66",
+    fontSize: 12
+  },
+  texto2: {
+    color: "#4DA49B",
+    fontSize: 12
+  },
+  texto3: {
+    color: "#7EAD47",
     fontSize: 12
   },
   color: {
-    color: "green"
+    color: "#D27D66"
   },
   container: {
     flex: 1,
