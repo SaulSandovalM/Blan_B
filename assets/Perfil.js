@@ -35,8 +35,8 @@ class Perfil extends  Component{
       <Container>
         <Cabecera2/>
       <Content>
-      <View style={{ backgroundColor:'rgb(0,0,0)', opacity:0.6}} >
-        <Image style={{  justifyContent:'center',alignItems:'center', height:180,}}
+      <View style={styles.view} >
+        <Image style={styles.img}
         source={{uri: 'https://ae01.alicdn.com/kf/HTB1YU0LRVXXXXbUXXXXq6xXFXXXz/1PC-Personalise-Square-piggy-bank-Logbook-Series-font-b-Tin-b-font-Plate-box-font-b.jpg'}}/>
       </View>
       <Imagen/>
@@ -85,6 +85,18 @@ class Perfil extends  Component{
       </Container>
     );
   }
-
 }
+
+const styles = StyleSheet.create({
+  view: {
+    backgroundColor: 'rgb(0,0,0)',
+    opacity: 0.6
+  },
+  img: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 180
+  }
+})
+
 export default Perfil;

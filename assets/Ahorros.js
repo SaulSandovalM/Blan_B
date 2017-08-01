@@ -1,18 +1,6 @@
 import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
-import {
-  Container,
-  Content,
-  Card,
-  CardItem,
-  Thumbnail,
-  Button,
-  Icon,
-  Left,
-  Body,
-  Right,
-  Fab
-} from 'native-base';
+import {AppRegistry, StyleSheet, Text, View, Image, TextInput} from 'react-native';
+import {Container, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right, Fab} from 'native-base';
 import imgLogo from '../imgs/Ahorro.png';
 import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
@@ -30,7 +18,7 @@ export default class Ahorros extends Component {
   }
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Cabecera2/>
         <Content>
           <Card>
@@ -103,7 +91,7 @@ export default class Ahorros extends Component {
           active={this.state.active}
           direction="up"
           containerStyle={{ }}
-          style={{ backgroundColor: '#5067FF' }}
+          style={styles.fab}
           position="bottomRight"
           onPress={() => Actions.NuevoAhorro()}>
           <Icon name="add" />
@@ -126,6 +114,12 @@ const styles = StyleSheet.create({
     height: 200,
     width: '100%',
     flex: 1
+  },
+  back: {
+    backgroundColor: "white"
+  },
+  fab: {
+    backgroundColor: '#5067FF'
   }
 });
 

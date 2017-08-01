@@ -31,7 +31,6 @@ class Registro extends Component{
     return(
       <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-around'}}>
 
-
         <Icon name= 'person' style={styles.iconStyle}/>
         <Text style={styles.regisTex}>REGISTRO</Text>
 
@@ -45,8 +44,7 @@ class Registro extends Component{
           keyboardType= 'email-address'
           returnKeyType= 'next'
           onChangeText={(text) => this.setState({email: text})}
-          value={this.state.email}
-        />
+          value={this.state.email}/>
       </Item>
 
       <Item rounded style={styles.inputStyle}>
@@ -54,8 +52,7 @@ class Registro extends Component{
           placeholder='Contraseña'
           secureTextEntry={true}
           onChangeText={(text) => this.setState({password: text})}
-          value={this.state.password}
-        />
+          value={this.state.password}/>
       </Item>
 
       <Item rounded style={styles.inputStyle}>
@@ -71,13 +68,10 @@ class Registro extends Component{
         <Text style={{color: 'white'}}>CREAR CUENTA</Text>
       </Button>
 
-
       <View style={styles.footerStyle}>
       <Text>¿Ya tienes cuenta?, </Text>
-      <Text style={{fontWeight:'bold'}}>INGRESA</Text>
+      <Text style={styles.font}>INGRESA</Text>
       </View>
-
-
       </View>
     );
   }
@@ -85,20 +79,40 @@ class Registro extends Component{
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    marginRight: 40, marginLeft: 40, marginBottom: 15, marginTop:10, backgroundColor: '#f08080'
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop:10,
+    backgroundColor: '#f08080'
   },
   inputStyle: {
-    marginRight: 40, marginLeft: 40, marginBottom: 15, marginTop:10, borderColor: '#f08080'
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 15,
+    marginTop:10,
+    borderColor: '#f08080'
   },
   iconStyle:{
-    fontSize: 100, color: '#f08080', alignSelf: 'center'
+    fontSize: 100,
+    color: '#f08080',
+    alignSelf: 'center'
   },
   regisTex: {
-    fontSize: 20, fontWeight: 'bold', alignSelf: 'center', marginBottom: 15, marginTop:10
+    fontSize: 20,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: 15,
+    marginTop:10
   },
-  footerStyle:{
-    justifyContent: 'center', flexDirection: 'row', marginBottom: 10, marginTop: 10
+  footerStyle: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 10,
+    marginTop: 10
+  },
+  font: {
+    fontWeight: 'bold'
   }
-
 })
+
 export default Registro;

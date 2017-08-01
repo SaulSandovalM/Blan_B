@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  View,
-  PixelRatio,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import { Header,CheckBox,Button,Form, Right,Thumbnail, H1, Body,Label, Left, List, CardItem,Card, ListItem,Container, Content,Text, Item, Input, Icon } from 'native-base';
-
-
+import {AppRegistry, StyleSheet, View, PixelRatio, TouchableOpacity, Image} from 'react-native';
+import {Header,CheckBox,Button,Form,Right,Thumbnail,H1,Body,Label,Left,List,CardItem,Card,ListItem,Container,Content,Text,Item,Input,Icon} from 'native-base';
 import ImagePicker from 'react-native-image-picker';
 
 export default class App extends React.Component {
-
   state = {
     avatarSource: null,
   };
@@ -56,14 +46,40 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={{justifyContent:'center',alignItems:'center'}}>
-        { this.state.avatarSource === null ? <Thumbnail style={{  zIndex:1, position:'absolute', top:-60, borderColor:'white',borderWidth:2.5}}  square large source={require('../imgs/user.png')} /> :
-          <Thumbnail style={{  zIndex:1, position:'absolute', top:-60, borderColor:'white',borderWidth:2.5}}  square large source={this.state.avatarSource}/>
+      <View style={styles.container}>
+        {
+          this.state.avatarSource === null ?
+          <Thumbnail style={styles.tub} square large source={require('../imgs/user.png')} /> :
+          <Thumbnail style={styles.tub} square large source={this.state.avatarSource}/>
         }
-        <View style={{  zIndex:2, left:35, backgroundColor:'white', height:35, borderRadius:15, width:35, justifyContent:'center', alignItems:'center'}}>
-        <Icon   onPress={this.selectPhotoTapped.bind(this)}  name='camera'/>
+        <View style={styles.view}>
+        <Icon onPress={this.selectPhotoTapped.bind(this)} name='camera'/>
         </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  tub: {
+    zIndex:1,
+    position:'absolute',
+    top:-60,
+    borderColor:'white',
+    borderWidth:2.5
+  },
+  view: {
+    zIndex:2,
+    left:35,
+    backgroundColor:'white',
+    height:35,
+    borderRadius:15,
+    width:35,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+});

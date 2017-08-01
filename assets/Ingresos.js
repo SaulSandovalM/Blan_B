@@ -1,38 +1,20 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
-import {
-  Container,
-  Content,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
-  Tab,
-  Tabs,
-  Item,
-  Input,
-  Fab
-} from 'native-base';
+import {Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Item, Input, Fab} from 'native-base';
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/ingreso.jpg';
 
 export default class Ingresos extends Component {
   render() {
     return (
-      <Container style={{ backgroundColor: "white" }}>
+      <Container style={styles.back}>
         <Cabecera2/>
         <Content>
           <Image source={imgLogo} style={styles.img}/>
 
-          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around' }}>
+          <View style={styles.view}>
             <View>
-              <Title style={{
-                top: 10,
-                color: "black"
-              }}>Ingreso Mensual</Title>
+              <Title style={styles.title}>Ingreso Mensual</Title>
             </View>
 
             <View>
@@ -90,6 +72,18 @@ const styles = StyleSheet.create({
   img: {
     height: 200,
     width: '100%'
+  },
+  back: {
+    backgroundColor: "white"
+  },
+  view: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  title: {
+    top: 10,
+    color: "black"
   }
 });
 

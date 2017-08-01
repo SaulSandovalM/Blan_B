@@ -1,23 +1,6 @@
 import React, {Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
-import {
-  Container,
-  Content,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
-  Tab,
-  Tabs,
-  Picker,
-  Form,
-  Item,
-  Fab,
-  Input
-} from 'native-base';
+import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Picker, Form, Item, Fab, Input} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Cabecera2 from './Cabecera2';
 
@@ -33,13 +16,13 @@ export default class Gastos extends Component {
   }
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Cabecera2/>
         <Content>
           <Image source={{uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'}}
-          style={{ height: 200, width: '100%' }}/>
+          style={styles.img}/>
 
-          <Title style={{ top: 10, color: "black" }}>Gastos</Title>
+        <Title style={styles.title}>Gastos</Title>
 
           <View style={styles.inputStyle}>
             <Item rounded style={styles.input}>
@@ -47,7 +30,7 @@ export default class Gastos extends Component {
             </Item>
 
             <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1}
-              onValueChange={this.onValueChange.bind(this)} style={{width: 100, top: 6}}>
+              onValueChange={this.onValueChange.bind(this)} style={styles.picker}>
               <Item label="Alimentos" value="key0"/>
               <Item label="Renta" value="key1"/>
               <Item label="Trasporte" value="key2"/>
@@ -62,7 +45,7 @@ export default class Gastos extends Component {
             </Item>
 
             <Picker iosHeader="Select one" mode="dropdown" selectedValue={this.state.selected1}
-              onValueChange={this.onValueChange.bind(this)} style={{width: 100, top: 6}}>
+              onValueChange={this.onValueChange.bind(this)} style={styles.picker}>
               <Item label="Alimentos" value="key0"/>
               <Item label="Renta" value="key1"/>
               <Item label="Trasporte" value="key2"/>
@@ -76,7 +59,7 @@ export default class Gastos extends Component {
             active={this.state.active}
             direction="up"
             containerStyle={{ }}
-            style={{ backgroundColor: '#5067FF' }}
+            style={styles.fab}
             position="bottomRight">
             <Icon name="add" />
           </Fab>
@@ -102,6 +85,24 @@ const styles = StyleSheet.create({
     borderColor: '#f08080',
     height: 40,
     width: 150
+  },
+  back: {
+    backgroundColor: "white"
+  },
+  img: {
+    height: 200,
+    width: '100%'
+  },
+  title: {
+    top: 10,
+    color: "black"
+  },
+  picker: {
+    width: 100,
+    top: 6
+  },
+  fab: {
+    backgroundColor: '#5067FF'
   }
 });
 

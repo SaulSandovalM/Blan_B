@@ -7,19 +7,19 @@ import imgLogo from '../imgs/planb.png';
 export default class Cabecera extends Component {
   render() {
     return (
-        <Header style={{backgroundColor: "white"}}>
-          
+        <Header style={styles.header}>
+
             <Image source={imgLogo} style={styles.image}/>
 
           <Right>
             <Button transparent onPress={()=>Actions.Tips()}>
-              <Icon name='pin' style={{color: 'green'}}/>
+              <Icon name='pin' style={styles.icon}/>
             </Button>
             <Button transparent onPress={()=>Actions.Perfil()}>
-              <Icon name='person' style={{color: 'green'}}/>
+              <Icon name='person' style={styles.icon}/>
             </Button>
             <Button transparent onPress={()=>Actions.Login()}>
-              <Icon name='menu' style={{color: 'green'}}/>
+              <Icon name='menu' style={styles.icon}/>
             </Button>
           </Right>
         </Header>
@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 60
+  },
+  icon: {
+    color: 'green'
   }
 });
 

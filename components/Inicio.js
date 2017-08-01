@@ -14,7 +14,7 @@ import Registro from '../assets/Registro';
 export default class Inicio extends Component {
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Cabecera/>
       <Tabs>
         <Tab heading="YO">
@@ -28,5 +28,11 @@ export default class Inicio extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  back: {
+    backgroundColor: "white"
+  }
+});
 
 module.export = Inicio;

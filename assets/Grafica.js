@@ -35,7 +35,6 @@ class Grafica extends React.Component {
         text: 'This is Pie chart description',
         textSize: 15,
         textColor: processColor('darkgray'),
-
       }
     };
   }
@@ -51,11 +50,10 @@ class Grafica extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-
+      <View style={styles.container}>
         <View style={styles.container}>
           <PieChart
-            style={styles.chart}
+            style={styles.container}
             logEnabled={true}
             chartBackgroundColor={processColor('pink')}
             chartDescription={this.state.description}
@@ -83,9 +81,6 @@ class Grafica extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  chart: {
-    flex: 1
   }
 });
 

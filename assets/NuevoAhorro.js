@@ -1,22 +1,6 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, Image } from 'react-native';
-import {
-  View,
-  Container,
-  Content,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
-  Tab,
-  Tabs,
-  Item,
-  Fab,
-  Input
-} from 'native-base';
+import {View, Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Item, Fab, Input} from 'native-base';
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/Ahorro.png';
 import {Actions} from 'react-native-router-flux';
@@ -33,7 +17,7 @@ export default class NuevoAhorro extends Component {
   }
   render() {
     return (
-      <Container style={{ backgroundColor: "white" }}>
+      <Container style={styles.back}>
         <Cabecera2/>
         <Content>
             <Image source={imgLogo} style={styles.img}/>
@@ -109,6 +93,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center'
   },
+  back: {
+    backgroundColor: "white"
+  }
 });
 
 module.export = NuevoAhorro;

@@ -7,7 +7,7 @@ import imgLogo from '../imgs/ingreso.jpg';
 export default class Tips extends Component {
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Cabecera2 />
         <Content>
             <CardItem>
@@ -20,7 +20,7 @@ export default class Tips extends Component {
             </CardItem>
             <CardItem>
               <Body>
-                <Image source={imgLogo} style={{height: 200, width: '100%', flex: 1}}/>
+                <Image source={imgLogo} style={styles.img}}/>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -38,5 +38,16 @@ export default class Tips extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  back: {
+    backgroundColor: "white"
+  },
+  img: {
+    height: 200,
+    width: '100%',
+    flex: 1
+  },
+});
 
 module.export = Tips;

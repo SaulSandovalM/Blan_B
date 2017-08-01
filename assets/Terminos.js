@@ -14,6 +14,7 @@ class Terminos extends Component {
       check3: false
     };
   }
+
   chec1() {
     this.setState({
       check1: !this.state.check1
@@ -21,6 +22,7 @@ class Terminos extends Component {
     const newestado = this.state.check1 = false;
     this.setState({selected: newestado});
   }
+
   chec2() {
     this.setState({
       check2: !this.state.check2
@@ -28,6 +30,7 @@ class Terminos extends Component {
     const newestado = this.state.selected = false;
     this.setState({selected: newestado});
   }
+
   chec3() {
     this.setState({
       check3: !this.state.check3
@@ -53,42 +56,42 @@ class Terminos extends Component {
 
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Content>
           <Cabecera3/>
             <CardItem header>
-              <Text style={{fontWeight: 'bold'}}>Términos y condiciones</Text>
+              <Text style={styles.font}>Términos y condiciones</Text>
             </CardItem>
 
             <CardItem>
               <Body>
-                <List style={{borderBottomWidth: 2, borderBottomColor: 'black'}}>
+                <List style={styles.list}>
                   <Text>Pulse los vínculos a continuación y léalos atentamente.
                     Al marcar las casillas, usted reconoce que ha leído y que acepta los siguientes términos:</Text>
-                  <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
+                  <ListItem style={styles.ListItem}>
                     <CheckBox checked={this.state.selected} onPress={this.toggle.bind(this)}/>
-                    <View style={{left: 15}}>
+                    <View style={styles.view}>
                       <Text>Acepto todo</Text>
                     </View>
                   </ListItem>
                 </List>
 
-                <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
+                <ListItem style={styles.listItem}>
                   <CheckBox checked={this.state.check1} onPress={this.chec1.bind(this)}/>
-                  <View style={{left: 10}}>
+                  <View style={styles.view2}}>
                     <Text>He leído y estoy de acuerdo con los Términos y condiciones y los Términos especiales</Text>
                   </View>
                 </ListItem>
 
                 <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
                   <CheckBox checked={this.state.check2} onPress={this.chec2.bind(this)}/>
-                  <View style={{left: 10}}>
+                  <View style={styles.view2}}>
                     <Text>He leído y estoy de acuerdo con las políticas de privacidad.</Text>
                   </View>
                 </ListItem>
                 <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
                   <CheckBox checked={this.state.check3} onPress={this.chec3.bind(this)}/>
-                  <View style={{left: 10}}>
+                  <View style={styles.view2}}>
                     <Text>Activar servicios interactivos</Text>
                   </View>
                 </ListItem>
@@ -96,7 +99,7 @@ class Terminos extends Component {
                 <Button block onPress={()=> Actions.Login()}>
                   <Text>Acepto</Text>
                 </Button>
-                <Button block style={{backgroundColor: 'gray', top: 6}}>
+                <Button block style={styles.boton}>
                   <Text>No acepto</Text>
                 </Button>
               </Body>
@@ -113,6 +116,30 @@ const styles = StyleSheet.create({
   header: {
     width: 40,
     height: 120,
+  },
+  back: {
+    backgroundColor: "white"
+  },
+  font: {
+    fontWeight: 'bold'
+  },
+  list: {
+    borderBottomWidth: 2,
+    borderBottomColor: 'black'
+  },
+  listItem: {
+    borderBottomWidth: 2,
+    borderBottomColor: 'white'
+  },
+  view: {
+    left: 15
+  },
+  view2: {
+    left: 10
+  },
+  boton: {
+    backgroundColor: 'gray',
+    top: 6
   }
 });
 

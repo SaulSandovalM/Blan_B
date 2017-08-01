@@ -8,9 +8,9 @@ import Grafica from '../assets/Grafica';
 export default class tabOne extends Component {
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Content>
-          <Card style={{ alignItems: 'center', height: 250 }}>
+          <Card style={styles.card}>
             <CardItem header>
               <Text>Ser mas ahorrativo</Text>
             </CardItem>
@@ -20,17 +20,12 @@ export default class tabOne extends Component {
             </CardItem>
           </Card>
 
-          <Card style={{
-            alignItems: 'center',
-            height: 200,
-          }}>
+          <Card style={styles.card2}>
             <CardItem header>
               <Icon active name="chatbubbles"/>
               <Text style={styles.texto}>Dinero</Text>
             </CardItem>
-            <CardItem style={{
-              alignItems: 'center'
-            }}>
+            <CardItem style={styles.cardItem}>
               <Text>
                 Es hora de ahorrar
               </Text>
@@ -104,6 +99,20 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center'
   },
+  back: {
+    backgroundColor: "white"
+  },
+  card: {
+    alignItems: 'center',
+    height: 250
+  },
+  card2: {
+    alignItems: 'center',
+    height: 200
+  },
+  cardItem: {
+    alignItems: 'center'
+  }
 });
 
 module.export = tabOne;

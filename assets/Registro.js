@@ -9,7 +9,7 @@ class Registro extends Component {
     return (
       <Container>
         <Content>
-          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around' }}>
+          <View style={styles.view}>
 
             <Icon name='person' style={styles.iconStyle}/>
             <Text style={styles.regisTex}>REGISTRO</Text>
@@ -27,13 +27,12 @@ class Registro extends Component {
             </Item>
 
             <Button rounded block style={styles.buttonStyle}>
-              <Text style={{ color: 'white' }}>CREAR CUENTA</Text>
+              <Text style={styles.color}>CREAR CUENTA</Text>
             </Button>
 
             <View style={styles.footerStyle}>
-              <Text>¿Ya tienes cuenta?,
-              </Text>
-              <Text style={{ fontWeight: 'bold' }} onPress={()=>Actions.Login()}>INGRESA</Text>
+              <Text>¿Ya tienes cuenta?,</Text>
+              <Text style={styles.font} onPress={()=>Actions.Login()}>INGRESA</Text>
             </View>
           </View>
         </Content>
@@ -74,7 +73,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 10,
     marginTop: 10
+  },
+  view: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  color: {
+    color: 'white'
+  },
+  font: {
+    fontWeight: 'bold'
   }
-
 })
+
 export default Registro;

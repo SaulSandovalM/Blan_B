@@ -7,10 +7,8 @@ import imgLogo from '../imgs/planb.png';
 export default class Cabecera3 extends Component {
   render() {
     return (
-        <Header style={{backgroundColor: "white"}}>
-
+        <Header style={styles.header}>
             <Image source={imgLogo} style={styles.image}/>
-
         </Header>
     );
   }
