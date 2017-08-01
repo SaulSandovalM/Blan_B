@@ -57,6 +57,75 @@ export default class tabOne extends Component {
             </Button>
           </Card>
           </View>
+
+          <Card>
+          <CardItem header>
+             <Text>Vista General</Text>
+           </CardItem>
+            <List>
+       <ListItem icon>
+         <Left>
+           <Icon name="home" />
+         </Left>
+         <Body>
+           <Text>Ingresos</Text>
+         </Body>
+         <Right>
+           <Text>$5,000.00</Text>
+         </Right>
+       </ListItem>
+       <ListItem icon>
+         <Left>
+           <Icon name="wifi" />
+         </Left>
+         <Body>
+           <Text>Gastos</Text>
+         </Body>
+         <Right>
+           <Text>$5000.00</Text>
+         </Right>
+       </ListItem>
+       <ListItem icon>
+         <Left>
+           <Icon name="paper" />
+         </Left>
+         <Body>
+           <Text>Tarjetas</Text>
+         </Body>
+         <Right>
+           <Text>$500.00</Text>
+         </Right>
+       </ListItem>
+     </List>
+          </Card>
+          <Card>
+          <CardItem header>
+             <Text>Gasto por categoría</Text>
+           </CardItem>
+            <CardItem>
+              <Body>
+                <Grafica/>
+              </Body>
+              <Left>
+                <Text>Hola</Text>
+              </Left>
+            </CardItem>
+          </Card>
+          <View style={styles.align}>
+            <Button iconLeft transparent onPress={()=>Actions.Ingresos()}>
+              <Icon name='cash' />
+                <Text>Ingresos</Text>
+            </Button>
+            <Button iconLeft transparent onPress={()=>Actions.Gastos()}>
+              <Icon name='alert'/>
+                <Text>Gastos</Text>
+            </Button>
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()}>
+              <Icon name='beaker' />
+                <Text>Ahorros</Text>
+            </Button>
+          </View>
+
         </Content>
       </Container>
     );
@@ -86,6 +155,7 @@ const styles = StyleSheet.create({
   align: {
     flexDirection: 'row',
     justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center'
   },
   borde: {

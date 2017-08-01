@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 
 export default class tabTwo extends Component {
@@ -39,6 +39,7 @@ export default class tabTwo extends Component {
                 </Body>
               </Left>
             </CardItem>
+            
             <CardItem>
               <Body>
                 <Image source={{

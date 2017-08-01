@@ -78,20 +78,20 @@ class Terminos extends Component {
 
                 <ListItem style={styles.listItem}>
                   <CheckBox checked={this.state.check1} onPress={this.chec1.bind(this)}/>
-                  <View style={styles.view2}}>
+                  <View style={styles.view2}>
                     <Text>He leído y estoy de acuerdo con los Términos y condiciones y los Términos especiales</Text>
                   </View>
                 </ListItem>
 
                 <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
                   <CheckBox checked={this.state.check2} onPress={this.chec2.bind(this)}/>
-                  <View style={styles.view2}}>
+                  <View style={styles.view2}>
                     <Text>He leído y estoy de acuerdo con las políticas de privacidad.</Text>
                   </View>
                 </ListItem>
                 <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
                   <CheckBox checked={this.state.check3} onPress={this.chec3.bind(this)}/>
-                  <View style={styles.view2}}>
+                  <View style={styles.view2}>
                     <Text>Activar servicios interactivos</Text>
                   </View>
                 </ListItem>
