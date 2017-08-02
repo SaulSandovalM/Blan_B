@@ -1,87 +1,44 @@
-import React from 'react';
-import { AppRegistry, StyleSheet, Text, View, processColor } from 'react-native';
-import {PieChart} from 'react-native-charts-wrapper';
+import React, { Component } from 'react'
+import {
+  StyleSheet,
+  View,
+  Text,
+} from 'react-native'
+import Pie from 'react-native-pie'
 
-class Grafica extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      legend: {
-        enabled: true,
-        textSize: 8,
-        form: 'CIRCLE',
-        position: 'RIGHT_OF_CHART',
-        wordWrapEnabled: true
-      },
-      data: {
-        dataSets: [{
-          values: [{value: 40, label: 'Sandwiches'},
-            {value: 21, label: 'Salads'},
-            {value: 15, label: 'Soup'},
-            {value: 9, label: 'Beverages'},
-            {value: 15, label: 'Desserts'}],
-          label: 'Pie dataset',
-          config: {
-            colors: [processColor('#C0FF8C'), processColor('#FFF78C'), processColor('#FFD08C'), processColor('#8CEAFF'), processColor('#FF8C9D')],
-            valueTextSize: 20,
-            valueTextColor: processColor('green'),
-            sliceSpace: 5,
-            selectionShift: 13
-          }
-        }],
-      },
-      description: {
-        text: 'This is Pie chart description',
-        textSize: 15,
-        textColor: processColor('darkgray'),
-      }
-    };
-  }
-
-  handleSelect(event) {
-    let entry = event.nativeEvent
-    if (entry == null) {
-      this.setState({...this.state, selectedEntry: null})
-    } else {
-      this.setState({...this.state, selectedEntry: JSON.stringify(entry)})
-    }
-  }
+export default class Grafica extends Component {
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.container}>
-          <PieChart
-            style={styles.container}
-            logEnabled={true}
-            chartBackgroundColor={processColor('pink')}
-            chartDescription={this.state.description}
-            data={this.state.data}
-            legend={this.state.legend}
-            entryLabelColor = {processColor('black')}
-            entryLabelTextSize = {20}
-            rotationEnabled={false}
-            drawSliceText={true}
-            usePercentValues={false}
-            centerText={'Pie center text!'}
-            centerTextRadiusPercent={100}
-            holeRadius={40}
-            holeColor={processColor('#f0f0f0')}
-            transparentCircleRadius={45}
-            transparentCircleColor={processColor('#f0f0f088')}
-            maxAngle={350}
-            onSelect={this.handleSelect.bind(this)}/>
-        </View>
+
+        <Pie
+          radius={50}
+          series={[20, 40, 40]}
+          colors={['red', 'blue','purple']}
+           />
+
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  }
-});
-
-export default Grafica;
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  gauge: {
+    position: 'absolute',
+    width: 100,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gaugeText: {
+    backgroundColor: 'transparent',
+    color: '#000',
+    fontSize: 24,
+  },
+})

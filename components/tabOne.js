@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+{/*import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { Container, Content, Card, CardItem, Body, Icon, Button } from 'native-base';
+import { Container, Content, Card, CardItem, Body, Icon, Button, List, ListItem, Left, Right } from 'native-base';
 import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
 import Grafica from '../assets/Grafica';
@@ -182,6 +182,112 @@ const styles = StyleSheet.create({
   },
   cardItem: {
     alignItems: 'center'
+  }
+});
+
+module.export = tabOne;*/}
+
+import React, { Component } from 'react';
+import {StyleSheet, View, Button} from 'react-native'
+import { Container, Header, Content,Left,List,Icon,Switch , ListItem,Thumbnail,Right,Badge , Card, CardItem, Body, Text } from 'native-base';
+import Grafica from '../assets/Grafica';
+
+export default class tabOne extends Component {
+  render() {
+    return (
+      <Container>
+        <Header />
+        <Content>
+          <Card>
+          <CardItem header>
+             <Text>Vista General</Text>
+           </CardItem>
+            <List>
+       <ListItem icon>
+         <Left>
+           <Icon name="home" />
+         </Left>
+         <Body>
+           <Text>Ingresos</Text>
+         </Body>
+         <Right>
+           <Text>$5,000.00</Text>
+         </Right>
+       </ListItem>
+       <ListItem icon>
+         <Left>
+           <Icon name="wifi" />
+         </Left>
+         <Body>
+           <Text>Gastos</Text>
+         </Body>
+         <Right>
+           <Text>$5000.00</Text>
+         </Right>
+       </ListItem>
+       <ListItem icon>
+         <Left>
+           <Icon name="paper" />
+         </Left>
+         <Body>
+           <Text>Tarjetas</Text>
+         </Body>
+         <Right>
+           <Text>$500.00</Text>
+         </Right>
+       </ListItem>
+     </List>
+          </Card>
+          <Card>
+          <CardItem header>
+             <Text>Gasto por categoría</Text>
+           </CardItem>
+            <CardItem>
+              <Body>
+                <Grafica/>
+              </Body>
+              <Left>
+                <Text>Hola</Text>
+              </Left>
+            </CardItem>
+          </Card>
+          <View style={styles.align}>
+            <Button iconLeft transparent onPress={()=>Actions.Ingresos()}>
+              <Icon name='cash' />
+                <Text>Ingresos</Text>
+            </Button>
+            <Button iconLeft transparent onPress={()=>Actions.Gastos()}>
+              <Icon name='alert'/>
+                <Text>Gastos</Text>
+            </Button>
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()}>
+              <Icon name='beaker' />
+                <Text>Ahorros</Text>
+            </Button>
+          </View>
+        </Content>
+      </Container>
+    );
+  }
+}
+
+
+const styles = StyleSheet.create({
+  texto: {
+    color: "green",
+    fontSize: 12
+  },
+  color: {
+    color: "green"
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+  align: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    justifyContent: 'space-around',
   }
 });
 
