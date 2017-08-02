@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
+import {firebaseRef} from './Firebase';
 import {Actions} from 'react-native-router-flux';
 
 export default class Cabecera extends Component {
@@ -17,7 +18,7 @@ export default class Cabecera extends Component {
             <Button transparent onPress={()=>Actions.Perfil()}>
               <Icon name='person' style={{color: 'green'}}/>
             </Button>
-            <Button transparent onPress={()=>Actions.Login()}>
+            <Button transparent onPress={() => firebaseRef.auth().signOut()}>
               <Icon name='menu' style={{color: 'green'}}/>
             </Button>
           </Right>
