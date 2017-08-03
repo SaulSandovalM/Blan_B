@@ -70,17 +70,16 @@ class Login extends Component {
 
           <LoginButton readPermissions={['public_profile', 'email']} onLoginFinished={this.handleLoginFinished}
             onLogoutFinished={() => alert("Adios perro.")}/>
-          
         </View>
 
         <Item rounded style={styles.inputRounded}>
-          <Input style={{color: 'white'}}
-            placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='white' returnKeyType='next'
+          <Input style={{color: 'black'}}
+            placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='black' returnKeyType='next'
           value={this.state.text} onChangeText={email => this.setState({email})}/>
         </Item>
         <Item rounded style={styles.inputRounded}>
-          <Input style={{color: 'white'}}
-            placeholder='Contraseña' placeholderTextColor='white' secureTextEntry={true} value={this.state.contraseña}
+          <Input style={{color: 'black'}}
+            placeholder='Contraseña' placeholderTextColor='black' secureTextEntry={true} value={this.state.contraseña}
             onChangeText={contraseña => this.setState({contraseña})}/>
         </Item>
         <Button rounded block style={styles.buttonIngreso} onPress={this.onButtonPress.bind(this)}>
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderColor: '#f08080',
     borderWidth: 3,
-    backgroundColor: "white"
+    backgroundColor: 'white'
   },
   buttonIngreso: {
     marginRight: 40,

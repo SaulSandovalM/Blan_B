@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 
 export default class tabTwo extends Component {
   render() {
     return (
-      <Container style={styles.back}>
+      <Container style={{backgroundColor: "white"}}>
         <Content>
-          <Card style={styles.card}>
+          <Card style={{flex: 0}}>
             <CardItem>
               <Left>
                 <Thumbnail source={{uri: 'https://avatars1.githubusercontent.com/u/20559576?v=4&s=460'}} />
@@ -29,7 +29,7 @@ export default class tabTwo extends Component {
             </CardItem>
           </Card>
 
-          <Card style={styles.card}>
+          <Card style={{flex: 0}}>
             <CardItem>
               <Left>
                 <Thumbnail source={{uri: 'https://avatars1.githubusercontent.com/u/20559576?v=4&s=460'}} />
@@ -39,22 +39,19 @@ export default class tabTwo extends Component {
                 </Body>
               </Left>
             </CardItem>
-            
             <CardItem>
               <Body>
                 <Image source={{
                   uri: 'https://dm6jf9380nk1h.cloudfront.net/thumbor/NsBlFRM7rbPiDiiLP8dpboTJ-WQ=/1200x0/filters:no_upscale()/https://dm6jf9380nk1h.cloudfront.net/article/ec6533aa-e4ff-4b6a-9c47-7a5f3caeccaf.jpg'}}
-                  style={styles.img}/>
+                  style={{height: 200, width: '100%'}}/>
               <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Text>
               </Body>
             </CardItem>
           </Card>
 
-          <Card style={styles.card}>
+          <Card style={{flex: 0}}>
             <CardItem>
               <Left>
                 <Thumbnail source={{uri: 'https://avatars1.githubusercontent.com/u/20559576?v=4&s=460'}} />
@@ -68,7 +65,7 @@ export default class tabTwo extends Component {
               <Body>
                 <Image source={{
                   uri: 'https://dm6jf9380nk1h.cloudfront.net/thumbor/NsBlFRM7rbPiDiiLP8dpboTJ-WQ=/1200x0/filters:no_upscale()/https://dm6jf9380nk1h.cloudfront.net/article/ec6533aa-e4ff-4b6a-9c47-7a5f3caeccaf.jpg'}}
-                  style={styles.img}/>
+                  style={{height: 200, width: '100%'}}/>
               <Text>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Text>
@@ -80,18 +77,5 @@ export default class tabTwo extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  back: {
-    backgroundColor: "white"
-  },
-  card: {
-    flex: 0
-  },
-  img: {
-    height: 200,
-    width: '100%'
-  }
-})
 
 module.export = tabTwo;

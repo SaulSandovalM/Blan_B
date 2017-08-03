@@ -2,14 +2,13 @@ import React, {Component} from 'react';
 import Cabecera from '../assets/Cabecera';
 import {AppRegistry, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
-import Tab1 from './tabOne';
-import Tab2 from './tabTwo';
+import tabOne from './tabOne';
+import tabTwo from './tabTwo';
 import Ingresos from '../assets/Ingresos';
 import Gastos from '../assets/Gastos';
 import Terminos from '../assets/Terminos';
 import Ahorros from '../assets/Ahorros';
 import Perfil from '../assets/Perfil';
-import Registro from '../assets/Registro';
 
 export default class Inicio extends Component {
   render() {
@@ -18,10 +17,10 @@ export default class Inicio extends Component {
         <Cabecera/>
         <Tabs>
           <Tab heading="YO">
-            <Tab1/>
+            
           </Tab>
           <Tab heading="NOTICIAS">
-            <Tab2/>
+
           </Tab>
         </Tabs>
       </Container>
