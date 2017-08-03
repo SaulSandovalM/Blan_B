@@ -10,45 +10,12 @@ import Terminos from '../assets/Terminos';
 import Ahorros from '../assets/Ahorros';
 import Perfil from '../assets/Perfil';
 import Registro from '../assets/Registro';
-import Login from '../assets/Login';
-import {firebaseRef} from '../assets/Firebase';
 
 export default class Inicio extends Component {
-  state = {
-    loggedIn: null
-  };
-  componentWillMount() {
-    firebaseRef.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({loggedIn: true});
-      } else {
-        this.setState({loggedIn: false});
-      }
-    });
-  }
-
-  renderContent() {
-    switch (this.state.loggedIn) {
-      case true:
-        return (
-          <TouchableOpacity onPress={() => firebaseRef.auth().signOut()}>
-            <Text>Cerrar Sesión</Text>
-          </TouchableOpacity>
-        );
-      case false:
-        return <Login/>;
-    }
-  }
-
   render() {
     return (
-      <Container style={styles.back}>
+      <Container >
         <Cabecera/>
-
-          <View style={{flex: 1}}>
-            {this.renderContent()}
-          </View>
-          
         <Tabs>
           <Tab heading="YO">
             <Tab1/>
@@ -61,11 +28,5 @@ export default class Inicio extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  back: {
-    backgroundColor: "white"
-  }
-});
 
 module.export = Inicio;

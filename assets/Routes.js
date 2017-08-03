@@ -12,13 +12,15 @@ import Inicio from '../components/Inicio';
 import NuevoAhorro from './NuevoAhorro';
 import Grafica from './Grafica';
 import Tips from './Tips';
+import Log from './Log';
 
 const Routes = () => {
   return (
     <Router>
       <Scene key="root">
-        <Scene key="Ter" header={null} component={Terminos} initial/>
-        <Scene key="Login" header={null} component={Login}/>
+        <Scene key="Ter" header={null} component={Terminos}/>
+        <Scene key="Login" header={null} component={Login} />
+        <Scene key="Log" header={null} component={Log} initial/>
         <Scene key="Registro" header={null} component={Registro}/>
         <Scene key="Inicio" header={null} component={Inicio}/>
         <Scene key="Perfil" header={null} component={Perfil}/>

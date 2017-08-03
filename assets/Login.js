@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight, KeyboardAvoidingView} from 'react-native';
 import {firebaseRef} from './Firebase';
-import {Button, Icon, Item, Input} from 'native-base';
 import FBSDK, {LoginButton, AccessToken} from 'react-native-fbsdk';
+import {Button, Icon, Item, Input} from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
 class Login extends Component {
   state = {
@@ -11,6 +12,11 @@ class Login extends Component {
     error: '',
     credential: ''
   };
+  constructor(props) {
+    super(props);
+    this.onLoginSuccess = this.onLoginSuccess.bind(this);
+    this.onLoginFailed = this.onLoginFailed.bind(this);
+  }
 
   componentWillMount() {
     this.authenticateUser();
@@ -21,22 +27,22 @@ class Login extends Component {
       const {accessToken} = data
       const credential = FacebookAuthProvider.credential(accessToken)
       firebaseRef.signInWithCredential(credential).then((credentials) => {
-        this.setState({credentials})
 
+        Actions.Inicio()
       }, (error) => {
         console.log("Sign in error", error)
       })
-    })
+    }).catch((error) => {
+      console.log("Sign in error", error)
+    });
   }
 
   onButtonPress() {
     const {email, contraseña} = this.state;
-
     this.setState({error: ''});
-
-    firebaseRef.auth().signInWithEmailAndPassword(email, contraseña).then(this.onLoginSuccess.bind(this)).catch(() => {
-      firebaseRef.auth().createUserWithEmailAndPassword(email, contraseña).then(this.onLoginSuccess.bind(this))
-      .catch(this.onLoginFailed.bind(this));
+    firebaseRef.auth().signInWithEmailAndPassword(email, contraseña).then(this.onLoginSuccess).catch(() => {
+      firebaseRef.auth().createUserWithEmailAndPassword(email, contraseña).then(this.onLoginSuccess)
+      .catch(this.onLoginFailed);
     });
   }
 
@@ -51,38 +57,40 @@ class Login extends Component {
 
   render() {
     return (
-      <Image source={require('../imgs/fn.jpg')} style={styles.imagen}>
+      <Image source={require('../imgs/fn.jpg')} style={{
+        justifyContent: 'space-around',
+        flex: 2,
+        height: null,
+        width: null,
+        opacity: 15}}>
 
-        <Text style={styles.texto}>BIENVENIDO</Text>
+        <Text style={{color: 'white', fontSize: 40, alignSelf: 'center', fontWeight: 'bold', marginTop: 20, backgroundColor: 'transparent'}}>BIENVENIDO</Text>
 
-        <View style={styles.view1}>
+        <View style={{height: 70, flexDirection: 'row', justifyContent: 'space-around',alignItems: 'center'}}>
 
-          <LoginButton
-          readPermissions={['public_profile', 'email']}
-          onLoginFinished={ this.handleLoginFinished }
-          onLogoutFinished={() => alert("Adios perro.")}/>
+          <LoginButton readPermissions={['public_profile', 'email']} onLoginFinished={this.handleLoginFinished}
+            onLogoutFinished={() => alert("Adios perro.")}/>
+          
         </View>
 
         <Item rounded style={styles.inputRounded}>
-          <Input style={styles.input}
-          placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='white'
-          returnKeyType='next' value={this.state.text} onChangeText={email => this.setState({email})}/>
+          <Input style={{color: 'white'}}
+            placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='white' returnKeyType='next'
+          value={this.state.text} onChangeText={email => this.setState({email})}/>
         </Item>
-
         <Item rounded style={styles.inputRounded}>
-          <Input style={styles.input}
-          placeholder='Contraseña' placeholderTextColor='white' secureTextEntry={true}
-          value={this.state.contraseña} onChangeText={contraseña => this.setState({contraseña})}/>
+          <Input style={{color: 'white'}}
+            placeholder='Contraseña' placeholderTextColor='white' secureTextEntry={true} value={this.state.contraseña}
+            onChangeText={contraseña => this.setState({contraseña})}/>
         </Item>
-
         <Button rounded block style={styles.buttonIngreso} onPress={this.onButtonPress.bind(this)}>
-          <Text style={styles.boton}>INGRESAR</Text>
+          <Text style={{color: 'white', fontWeight: 'bold'}}>INGRESAR</Text>
         </Button>
 
-        <View style={styles.view2}>
-          <View style={styles.view3}>
+        <View style={{justifyContent: 'flex-end', backgroundColor: 'transparent'}}>
+          <View style={{justifyContent: 'center', flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
             <Text>¿Aún no tienes cuenta?,</Text>
-            <Text style={styles.registrate}>REGISTRATE</Text>
+            <Text style={{fontWeight: 'bold'}} onPress={() => Actions.Registro()}>REGISTRATE</Text>
           </View>
         </View>
       </Image>
@@ -111,54 +119,14 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginBottom: 10,
     borderColor: '#f08080',
-    borderWidth: 3
+    borderWidth: 3,
+    backgroundColor: "white"
   },
   buttonIngreso: {
     marginRight: 40,
     marginLeft: 40,
     marginBottom: 10,
     backgroundColor: '#f08080'
-  },
-  imagen: {
-    justifyContent: 'space-around',
-    flex: 2,
-    height: null,
-    width: null,
-    opacity: 15
-  },
-  texto: {
-    color: 'white',
-    fontSize: 40,
-    alignSelf: 'center',
-    fontWeight: 'bold',
-    marginTop: 20,
-    backgroundColor: 'transparent'
-  },
-  view1: {
-    height: 70,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  view2: {
-    justifyContent: 'flex-end',
-    backgroundColor: 'transparent'
-  },
-  view3: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    marginBottom: 10,
-    marginTop: 10
-  },
-  input: {
-    color: 'white'
-  },
-  boton: {
-    color: 'white',
-    fontWeight: 'bold'
-  },
-  registrate: {
-    fontWeight: 'bold'
   }
 })
 

@@ -3,6 +3,7 @@ import { AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import imgLogo from '../imgs/planb.png';
+import {firebaseRef} from './Firebase';
 
 export default class Cabecera extends Component {
   render() {
@@ -12,13 +13,13 @@ export default class Cabecera extends Component {
             <Image source={imgLogo} style={styles.image}/>
 
           <Right>
-            <Button transparent onPress={()=>Actions.Tips()}>
+            <Button transparent onPress={()=>Actions.Login()}>
               <Icon name='pin' style={styles.icon}/>
             </Button>
             <Button transparent onPress={()=>Actions.Perfil()}>
               <Icon name='person' style={styles.icon}/>
             </Button>
-            <Button transparent onPress={()=>Actions.Login()}>
+            <Button transparent onPress={() => firebaseRef.auth().signOut()}>
               <Icon name='menu' style={styles.icon}/>
             </Button>
           </Right>
