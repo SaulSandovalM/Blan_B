@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native';
 import { Button, Icon, Item, Input} from 'native-base';
-import {firebaseRef} from './Firebase';
+import firebase from './Firebase'
 import {Actions} from 'react-native-router-flux';
 import Inicio from '../components/Inicio';
 import Login from './Login';
@@ -10,7 +10,7 @@ class Log extends Component {
   state = {loggedIn: null};
 
   componentWillMount(){
-      firebaseRef.auth().onAuthStateChanged((user) => {
+      firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ loggedIn: true });
       } else {

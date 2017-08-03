@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight, KeyboardAvoidingView  } from 'react-native';
-import {firebaseRef} from './Firebase';
+import firebase, {firebaseAuth} from './Firebase'
 import FBSDK, { LoginButton, AccessToken } from 'react-native-fbsdk';
 import { Button, Icon, Item, Input} from 'native-base';
 import {Actions} from 'react-native-router-flux';
+
+const { FacebookAuthProvider } = firebase.auth
 
 class Login extends Component {
   state = { email: '', contraseña: '', error: '', credential: ''};
@@ -22,8 +24,7 @@ authenticateUser = () => {
   AccessToken.getCurrentAccessToken().then((data) => {
     const { accessToken } = data
     const credential = FacebookAuthProvider.credential(accessToken)
-    firebaseRef.signInWithCredential(credential).then((credentials) => {
-      
+    firebaseAuth.signInWithCredential(credential).then((credentials) => {
       Actions.Inicio()
     }, (error) => {
       console.log("Sign in error", error)
@@ -40,10 +41,10 @@ authenticateUser = () => {
 
     this.setState({ error: ''});
 
-    firebaseRef.auth().signInWithEmailAndPassword(email, contraseña)
+    firebase.auth().signInWithEmailAndPassword(email, contraseña)
       .then(this.onLoginSuccess)
       .catch(() => {
-        firebaseRef.auth().createUserWithEmailAndPassword(email, contraseña)
+        firebase.auth().createUserWithEmailAndPassword(email, contraseña)
           .then(this.onLoginSuccess)
           .catch(this.onLoginFailed);
       });
@@ -64,7 +65,15 @@ authenticateUser = () => {
     });
   }
 
-
+  handleLoginFinished = (error, result) => {
+      if (error) {
+        console.error(error)
+      } else if (result.isCancelled) {
+        console.warn("login is cancelled.");
+      } else {
+        this.authenticateUser()
+      }
+    }
 
     render(){
         return(
@@ -122,16 +131,7 @@ flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
     }
 }
 
-handleLoginFinished = (error, result) => {
-    if (error) {
-      console.error(error)
-    } else if (result.isCancelled) {
-      console.warn("login is cancelled.");
-    } else {
-      this.authenticateUser()
-      alert('FuncionHandle')
-    }
-  }
+
 
 const styles = StyleSheet.create({
 

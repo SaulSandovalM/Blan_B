@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native';
 import { Button, Icon, Item, Input} from 'native-base';
-import {firebaseRef} from './Firebase';
+import firebase from './Firebase'
 import {Actions} from 'react-native-router-flux';
 import Login from './Login';
 
@@ -18,7 +18,7 @@ class Registro extends Component{
 
   _register(){
     if( this.state.password == this.state.verifyPassword){
-    firebaseRef.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error){
       console.log(error.code)
       console.log(error.message)
       })
