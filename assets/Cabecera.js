@@ -4,7 +4,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } 
 import firebase from './Firebase'
 import {Actions} from 'react-native-router-flux';
 
-export default class Cabecera extends Component {
+export default class Cabecera extends Component {  
   render() {
     return (
         <Header style={{backgroundColor: "white"}}>
