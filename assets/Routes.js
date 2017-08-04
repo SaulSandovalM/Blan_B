@@ -13,18 +13,20 @@ import NuevoAhorro from './NuevoAhorro';
 import Grafica from './Grafica';
 import Tips from './Tips';
 import Log from './Log';
+import Bienvenido from './Bienvenido';
 
 const Routes = () => {
   return (
     <Router>
       <Scene key="root">
-        <Scene key="Ter" header={null} component={Terminos} initial/>
+        <Scene key="Bienvenido" header={null} component={Bienvenido} />
+        <Scene key="Ter" header={null} component={Terminos}/>
         <Scene key="Login" header={null} component={Login} />
         <Scene key="Log" header={null} component={Log}/>
         <Scene key="Registro" header={null} component={Registro}/>
         <Scene key="Inicio" header={null} component={Inicio} />
         <Scene key="Perfil" header={null} component={Perfil}/>
-        <Scene key="Ingresos" header={null} component={Ingresos}/>
+        <Scene key="Ingresos" header={null} component={Ingresos}initial/>
         <Scene key="Gastos" header={null} component={Gastos}/>
         <Scene key="Ahorros" header={null} component={Ahorros}/>
         <Scene key="NuevoAhorro" header={null} component={NuevoAhorro}/>

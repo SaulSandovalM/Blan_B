@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
-import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
+import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Card, CardItem, List, ListItem } from 'native-base';
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/ingreso.jpg';
-import Valores from '../components/Modalcal';
+import Valores from '../components/Modal';
 
 export default class Ingresos extends Component {
 
