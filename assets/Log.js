@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHi
 import { Button, Icon, Item, Input} from 'native-base';
 import {firebaseRef} from './Firebase';
 import {Actions} from 'react-native-router-flux';
-import Inicio from '../components/Inicio';
+import Inicio from '../components/Principal';
 import Login from './Login';
 
 class Log extends Component {

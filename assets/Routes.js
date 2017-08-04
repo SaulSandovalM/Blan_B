@@ -8,7 +8,7 @@ import Ahorros from './Ahorros';
 import Perfil from './Perfil';
 import Login from './Login';
 import Registro from './Registro';
-import Inicio from '../components/Inicio';
+import Inicio from '../components/Principal';
 import NuevoAhorro from './NuevoAhorro';
 import Grafica from './Grafica';
 import Tips from './Tips';
