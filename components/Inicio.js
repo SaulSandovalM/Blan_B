@@ -17,7 +17,7 @@ export default class Inicio extends Component {
         <Cabecera/>
         <Tabs>
           <Tab heading="YO">
-            
+
           </Tab>
           <Tab heading="NOTICIAS">
 

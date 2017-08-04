@@ -1,51 +1,53 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
-import {Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Item, Input, Fab} from 'native-base';
+import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/ingreso.jpg';
+import Valores from '../components/Modalcal';
 
 export default class Ingresos extends Component {
+
+
   render() {
     return (
-      <Container style={styles.back}>
+      <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
           <Image source={imgLogo} style={styles.img}/>
+          <Card>
+        <CardItem header>
+            <Text>Nuevo Ingreso</Text>
+          </CardItem>
 
-          <View style={styles.view}>
-            <View>
-              <Title style={styles.title}>Ingreso Mensual</Title>
-            </View>
+          <List>
+            <ListItem icon>
+              <Left>
+                <Icon name="star" />
+              </Left>
+              <Body>
+                <Valores/>
+              </Body>
+            </ListItem>
+            <ListItem icon>
+              <Left>
+                <Icon name="calendar" />
+              </Left>
+              <Body>
+                <Text>03 ago.,2017</Text>
+              </Body>
 
-            <View>
-              <Text style={styles.texto}>Trabajo</Text>
-            </View>
-
-            <View>
-              <Item rounded style={styles.inputStyle}>
-                <Input placeholder='$' keyboardType='numeric' returnKeyType='next'/>
-              </Item>
-            </View>
-          </View>
+            </ListItem>
+            <ListItem icon>
+              <Left>
+                <Icon name="paper" />
+              </Left>
+              <Body>
+                <Text>Descripción</Text>
+              </Body>
+            </ListItem>
+          </List>
+        </Card>
         </Content>
-
-            {/*<View>
-              <Text style={styles.texto}>Otros</Text>
-            </View>
-
-            <View>
-              <Item rounded style={styles.inputStyle}>
-                <Input placeholder='$' keyboardType='numeric' returnKeyType='next'/>
-              </Item>
-            </View>
-
-        <Fab
-          direction="up"
-          containerStyle={{ }}
-          style={{ backgroundColor: '#5067FF' }}
-          position="bottomRight">
-          <Icon name="add" />
-        </Fab>*/}
       </Container>
     );
   }
@@ -55,35 +57,16 @@ const styles = StyleSheet.create({
   color: {
     color: "green"
   },
-  inputStyle: {
-    marginRight: 40,
-    marginLeft: 40,
-    marginBottom: 15,
-    marginTop: 10,
-    borderColor: '#f08080'
+  align: {
+    flexDirection: 'row'
   },
   texto: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    marginBottom: 15,
-    marginTop: 20
+    fontSize: 20,
+    top: 32
   },
   img: {
     height: 200,
     width: '100%'
-  },
-  back: {
-    backgroundColor: "white"
-  },
-  view: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-around'
-  },
-  title: {
-    top: 10,
-    color: "black"
   }
 });
 
