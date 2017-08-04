@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Text, TouchableOpacity,TouchableHighlight, View } from 'react-native';
-import { Left,Icon,Right,Input,Item, } from 'native-base';
+import { Left,Icon,Right,Input,Item,Button, } from 'native-base';
 import Modal from 'react-native-modal';
 import Style from '../estilos/Styles';
 import InputButton from './Button';
@@ -58,10 +58,9 @@ export default class Example extends Component {
   render() {
     return (
       <View style={Style.container}>
-
-        <Item floatingLabel onPress={() => this.setState({ visibleModal: 1 })}>
-                {this.state.total== 0 ?<Input disabled value='Introduzca el valor'/>:<Input disabled value={"$"+this.state.total.toString()}/>}
-        </Item>
+      <Button transparent dark onPress={() => this.setState({ visibleModal: 1 })}>
+          {this.state.total== 0 ?<Text>Introduzca el valor</Text>:<Text>{"$"+this.state.total.toString()}</Text>}
+        </Button>
 
         <Modal isVisible={this.state.visibleModal === 1}>
           {this._renderModalContent()}
