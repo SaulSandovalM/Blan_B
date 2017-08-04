@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHi
 import { Button, Icon, Item, Input} from 'native-base';
 import {firebaseRef} from './Firebase';
 import imgLogo from '../imgs/planb.png';
-{/*¿¡Actions?*/}
+import {Actions} from 'react-native-router-flux';
 class Registro extends Component{
   constructor(props){
     super(props)
@@ -66,7 +66,7 @@ class Registro extends Component{
 
       <View style={styles.footerStyle}>
       <Text>¿Ya tienes cuenta?, </Text>
-      <Text style={styles.font}>INGRESA</Text>
+      <Text style={styles.font} onPress={()=>Actions.Login()}>INGRESA</Text>
       </View>
       </View>
     );
