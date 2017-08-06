@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Image, TextInput} from 'react-native';
-import {Container, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right, Fab} from 'native-base';
+import {Container, Content, Card, CardItem, Button, Icon, Left, Body, Fab} from 'native-base';
 import imgLogo from '../imgs/Ahorro.png';
 import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
@@ -13,14 +13,17 @@ export default class Ahorros extends Component {
       text: '$'
     };
   }
+  
   onValueChange(value : string) {
     this.setState({selected1: value});
   }
+
   render() {
     return (
       <Container style={styles.back}>
         <Cabecera2/>
         <Content>
+
           <Card>
             <CardItem>
               <Left>
@@ -86,16 +89,14 @@ export default class Ahorros extends Component {
               </Left>
             </CardItem>
           </Card>
+
         </Content>
-        <Fab
-          active={this.state.active}
-          direction="up"
-          containerStyle={{ }}
-          style={styles.fab}
-          position="bottomRight"
-          onPress={() => Actions.NuevoAhorro()}>
-          <Icon name="add" />
+
+        <Fab active={this.state.active} direction="up" containerStyle={{}}
+          style={styles.fab} position="bottomRight" onPress={() => Actions.NuevoAhorro()}>
+          <Icon name="add"/>
         </Fab>
+
       </Container>
     );
   }

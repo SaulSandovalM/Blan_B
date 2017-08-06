@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
-import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Picker, Form, Item, Fab, Input} from 'native-base';
+import {AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
+import {Container, Content, Header, Icon, Title, Picker, Item, Fab, Input} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Cabecera2 from './Cabecera2';
 
@@ -11,20 +11,25 @@ export default class Gastos extends Component {
       selected1: "key1"
     };
   }
+
   onValueChange(value : string) {
     this.setState({selected1: value});
   }
+
   render() {
     return (
       <Container style={styles.back}>
         <Cabecera2/>
         <Content>
-          <Image source={{uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'}}
-          style={styles.img}/>
 
-        <Title style={styles.title}>Gastos</Title>
+          <Image source={{
+            uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'
+          }} style={styles.img}/>
+
+          <Title style={styles.title}>Gastos</Title>
 
           <View style={styles.inputStyle}>
+
             <Item rounded style={styles.input}>
               <Input placeholder='$' keyboardType='numeric'/>
             </Item>
@@ -37,6 +42,7 @@ export default class Gastos extends Component {
               <Item label="Escuela" value="key3"/>
               <Item label="Casa" value="key4"/>
             </Picker>
+
           </View>
 
           <View style={styles.inputStyle}>
@@ -52,17 +58,16 @@ export default class Gastos extends Component {
               <Item label="Escuela" value="key3"/>
               <Item label="Casa" value="key4"/>
             </Picker>
+
           </View>
+
         </Content>
 
-          <Fab
-            active={this.state.active}
-            direction="up"
-            containerStyle={{ }}
-            style={styles.fab}
-            position="bottomRight">
-            <Icon name="add" />
-          </Fab>
+        <Fab active={this.state.active} direction="up" containerStyle={{}}
+          style={styles.fab} position="bottomRight">
+          <Icon name="add"/>
+        </Fab>
+
       </Container>
     );
   }

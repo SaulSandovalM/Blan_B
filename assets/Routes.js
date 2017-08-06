@@ -19,14 +19,14 @@ const Routes = () => {
   return (
     <Router>
       <Scene key="root">
-        <Scene key="Bienvenido" header={null} component={Bienvenido} />
+        <Scene key="Bienvenido" header={null} component={Bienvenido} initial/>
         <Scene key="Ter" header={null} component={Terminos}/>
         <Scene key="Login" header={null} component={Login} />
         <Scene key="Log" header={null} component={Log}/>
         <Scene key="Registro" header={null} component={Registro}/>
         <Scene key="Inicio" header={null} component={Inicio} />
         <Scene key="Perfil" header={null} component={Perfil}/>
-        <Scene key="Ingresos" header={null} component={Ingresos} initial/>
+        <Scene key="Ingresos" header={null} component={Ingresos} />
         <Scene key="Gastos" header={null} component={Gastos}/>
         <Scene key="Ahorros" header={null} component={Ahorros}/>
         <Scene key="NuevoAhorro" header={null} component={NuevoAhorro}/>

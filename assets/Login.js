@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight, KeyboardAvoidingView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  TouchableHighlight,
+  KeyboardAvoidingView
+} from 'react-native';
 import {firebaseRef} from './Firebase';
 import FBSDK, {LoginButton, AccessToken} from 'react-native-fbsdk';
 import {Button, Icon, Item, Input} from 'native-base';
@@ -12,6 +21,7 @@ class Login extends Component {
     error: '',
     credential: ''
   };
+
   constructor(props) {
     super(props);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
@@ -27,7 +37,6 @@ class Login extends Component {
       const {accessToken} = data
       const credential = FacebookAuthProvider.credential(accessToken)
       firebaseRef.signInWithCredential(credential).then((credentials) => {
-
         Actions.Inicio()
       }, (error) => {
         console.log("Sign in error", error)
@@ -48,7 +57,7 @@ class Login extends Component {
 
   onLoginFailed() {
     this.setState({error: 'Autenticación Fallida'});
-    alert('Verifica campos Perro')
+    alert('Verifica los campos')
   }
 
   onLoginSuccess() {
@@ -57,41 +66,38 @@ class Login extends Component {
 
   render() {
     return (
-      <Image source={require('../imgs/fn.jpg')} style={{
-        justifyContent: 'space-around',
-        flex: 2,
-        height: null,
-        width: null,
-        opacity: 15}}>
+      <Image source={require('../imgs/fn.jpg')} style={styles.img}>
 
-        <Text style={{color: 'white', fontSize: 40, alignSelf: 'center', fontWeight: 'bold', marginTop: 20, backgroundColor: 'transparent'}}>BIENVENIDO</Text>
+        <Text style={styles.texto}>BIENVENIDO</Text>
 
-        <View style={{height: 70, flexDirection: 'row', justifyContent: 'space-around',alignItems: 'center'}}>
-
-          <LoginButton readPermissions={['public_profile', 'email']} onLoginFinished={this.handleLoginFinished}
-            onLogoutFinished={() => alert("Adios perro.")}/>
+        <View style={styles.view}>
+          <LoginButton readPermissions={['public_profile', 'email']}
+            onLoginFinished={this.handleLoginFinished} onLogoutFinished={() => alert("Adios.")}/>
         </View>
 
         <Item rounded style={styles.inputRounded}>
-          <Input style={{color: 'black'}}
-            placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='black' returnKeyType='next'
-          value={this.state.text} onChangeText={email => this.setState({email})}/>
+          <Input style={styles.input}
+            placeholder='Correo electrónico' keyboardType='email-address' placeholderTextColor='black'
+            returnKeyType='next' value={this.state.text} onChangeText={email => this.setState({email})}/>
         </Item>
+
         <Item rounded style={styles.inputRounded}>
-          <Input style={{color: 'black'}}
+          <Input style={styles.input}
             placeholder='Contraseña' placeholderTextColor='black' secureTextEntry={true} value={this.state.contraseña}
             onChangeText={contraseña => this.setState({contraseña})}/>
         </Item>
+
         <Button rounded block style={styles.buttonIngreso} onPress={this.onButtonPress.bind(this)}>
-          <Text style={{color: 'white', fontWeight: 'bold'}}>INGRESAR</Text>
+          <Text style={styles.boton}>INGRESAR</Text>
         </Button>
 
-        <View style={{justifyContent: 'flex-end', backgroundColor: 'transparent'}}>
-          <View style={{justifyContent: 'center', flexDirection: 'row', marginBottom: 10, marginTop: 10}}>
+        <View style={styles.view2}>
+          <View style={styles.view3}>
             <Text>¿Aún no tienes cuenta?,</Text>
-            <Text style={{fontWeight: 'bold'}} onPress={() => Actions.Registro()}>REGISTRATE</Text>
+            <Text style={styles.font} onPress={() => Actions.Registro()}>REGISTRATE</Text>
           </View>
         </View>
+
       </Image>
     );
   }
@@ -109,9 +115,26 @@ handleLoginFinished = (error, result) => {
 }
 
 const styles = StyleSheet.create({
-  image: {
-    width: '100%',
-    height: '100%'
+  img: {
+    justifyContent: 'space-around',
+    flex: 2,
+    height: null,
+    width: null,
+    opacity: 15
+  },
+  texto: {
+    color: 'white',
+    fontSize: 40,
+    alignSelf: 'center',
+    fontWeight: 'bold',
+    marginTop: 20,
+    backgroundColor: 'transparent'
+  },
+  view: {
+    height: 70,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   inputRounded: {
     marginRight: 40,
@@ -121,12 +144,32 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     backgroundColor: 'white'
   },
+  input: {
+    color: 'black'
+  },
   buttonIngreso: {
     marginRight: 40,
     marginLeft: 40,
     marginBottom: 10,
-    backgroundColor: '#f08080'
+    backgroundColor: '#4DA49B'
+  },
+  boton: {
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  view2: {
+    justifyContent: 'flex-end',
+    backgroundColor: 'transparent'
+  },
+  view3: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 10,
+    marginTop: 10
+  },
+  font: {
+    fontWeight: 'bold'
   }
-})
+});
 
 export default Login;

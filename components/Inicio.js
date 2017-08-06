@@ -1,31 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Container, Header, Content, Tab, Tabs } from 'native-base';
+import Tab1 from './tabOne';
+import Tab2 from './tabTwo';
 import Cabecera from '../assets/Cabecera';
-import {AppRegistry, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs } from 'native-base';
-import tabOne from './tabOne';
-import tabTwo from './tabTwo';
-import Ingresos from '../assets/Ingresos';
-import Gastos from '../assets/Gastos';
-import Terminos from '../assets/Terminos';
-import Ahorros from '../assets/Ahorros';
-import Perfil from '../assets/Perfil';
 
-export default class Inicio extends Component {
+export default class HeaderExample extends Component {
   render() {
     return (
-      <Container >
-        <Cabecera/>
-        <Tabs>
-          <Tab heading="YO">
-
-          </Tab>
-          <Tab heading="NOTICIAS">
-
-          </Tab>
-        </Tabs>
+      <Container>
+      <Cabecera hasTabs />
+      <Tabs >
+        <Tab heading="Tab1">
+          <Tab1 />
+        </Tab>
+        <Tab heading="Tab2">
+          <Tab2 />
+        </Tab>
+      </Tabs>
       </Container>
     );
   }
 }
-
-module.export = Inicio;

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
+import React, {Component} from 'react';
+import {AppRegistry, StyleSheet, Text, Image} from 'react-native';
 import {Header} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import imgLogo from '../imgs/planb.png';
@@ -7,9 +7,9 @@ import imgLogo from '../imgs/planb.png';
 export default class Cabecera3 extends Component {
   render() {
     return (
-        <Header style={styles.header}>
-            <Image source={imgLogo} style={styles.image}/>
-        </Header>
+      <Header style={styles.header}>
+        <Image source={imgLogo} style={styles.image}/>
+      </Header>
     );
   }
 }
