@@ -4,6 +4,7 @@ import {Container, Content, Left, Body, Icon, Card, CardItem, List, ListItem} fr
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/ingreso.jpg';
 import Valores from '../components/Modal';
+import Fecha from '../components/Fecha';
 
 export default class Ingresos extends Component {
   render() {
@@ -32,7 +33,7 @@ export default class Ingresos extends Component {
                   <Icon name="calendar"/>
                 </Left>
                 <Body>
-                  <Text>03 ago.,2017</Text>
+                  <Fecha />
                 </Body>
               </ListItem>
 
