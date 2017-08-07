@@ -28,7 +28,6 @@ class Fecha extends Component {
               marginLeft: 0
             },
             dateInput: {
-<<<<<<< HEAD
               alignItems: 'flex-start',
               marginLeft: 15,
               borderColor: 'white',
@@ -36,7 +35,7 @@ class Fecha extends Component {
             dateText:{
               color:'#424242'
             },
-            
+
           }}
           onDateChange={(date) => {this.setState({date: date})}}
         />

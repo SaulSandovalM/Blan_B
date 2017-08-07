@@ -36,17 +36,7 @@ export default class Ingresos extends Component {
                   <Fecha />
                 </Body>
               </ListItem>
-
-              <ListItem icon>
-                <Left>
-                  <Icon name="paper" style={{color: '#3f51b5'}}/>
-                </Left>
-                <Body>
-                  <Text style={{marginLeft: 15, color:'#424242'}}>Descripción</Text>
-                </Body>
-              </ListItem>
             </List>
-
           </Card>
         </Content>
       </Container>
