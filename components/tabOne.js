@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, View, Dimensions} from 'react-native';
+import {AppRegistry, StyleSheet, Text, View, Dimensions, Image} from 'react-native';
 import { Container, Content, Card, CardItem, Body, Icon, Button } from 'native-base';
 import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
@@ -42,29 +42,28 @@ export default class tabOne extends Component {
 
           <View style={styles.align}>
             <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ingresos()} style={styles.boton}>
-              <Icon name='cash' />
+            <Button iconLeft transparent onPress={()=>Actions.Ingresos()}>
+                <Image source={require('../imgs/Ingresos.png')} style={styles.img}/>
                 <Text>Ingresos</Text>
             </Button>
           </Card>
 
           <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Gastos()} style={styles.boton}>
-              <Icon name='alert'/>
+            <Button iconLeft transparent onPress={()=>Actions.Gastos()}>
+                <Image source={require('../imgs/Gastos.png')} style={styles.img}/>
                 <Text>Gastos</Text>
             </Button>
           </Card>
 
           <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
-              <Icon name='beaker' />
+            <Button iconLeft transparent onPress={()=>Actions.Ahorros()}>
+                <Image source={require('../imgs/Ahorros.png')} style={styles.img}/>
                 <Text>Ahorros</Text>
             </Button>
           </Card>
           </View>
         </Content>
       </Container>
-
     );
   }
 }
@@ -90,7 +89,12 @@ const styles = StyleSheet.create({
   borde: {
     width: '33%',
     height: 100,
+    alignItems: 'center',
     justifyContent: 'center'
+  },
+  img: {
+    width: 50,
+    height: 50,
   }
 });
 

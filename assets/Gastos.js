@@ -3,6 +3,7 @@ import {AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
 import {Container, Content, Header, Icon, Title, Picker, Item, Fab, Input} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Cabecera2 from './Cabecera2';
+import imgLogo from '../imgs/Gastos.png';
 
 export default class Gastos extends Component {
   constructor(props) {
@@ -22,9 +23,7 @@ export default class Gastos extends Component {
         <Cabecera2/>
         <Content>
 
-          <Image source={{
-            uri: 'https://www.clubfinanzas.com/wp-content/uploads/2016/01/como-reducir-gastos.jpg'
-          }} style={styles.img}/>
+        <Image source={imgLogo} style={styles.img}/>
 
           <Title style={styles.title}>Gastos</Title>
 
