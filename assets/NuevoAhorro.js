@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, Image } from 'react-native';
-import {View, Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Item, Fab, Input} from 'native-base';
+import {AppRegistry, StyleSheet, Text, Image} from 'react-native';
+import {View, Container, Content, Body, Button, Icon, Title, Item, Fab, Input, CardItem, List, ListItem, Left} from 'native-base';
 import Cabecera2 from './Cabecera2';
-import imgLogo from '../imgs/Ahorro.png';
+import imgLogo from '../imgs/Ahorros.png';
 import {Actions} from 'react-native-router-flux';
+import Valores from '../components/Modal';
+import Fecha from '../components/Fecha';
 
 export default class NuevoAhorro extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected1: "key1",
+      selected1: "key1"
     };
   }
   onValueChange(value : string) {
@@ -20,41 +22,63 @@ export default class NuevoAhorro extends Component {
       <Container style={styles.back}>
         <Cabecera2/>
         <Content>
-            <Image source={imgLogo} style={styles.img}/>
+          <Image source={imgLogo} style={styles.img}/>
+          <CardItem header>
+            <Text>¿Cuanto quieres ahorrar?</Text>
+          </CardItem>
 
-          <View>
-            <Title>¿Cuanto quieres ahorrar?</Title>
-          </View>
+          <List>
+            <ListItem icon>
+              <Left>
+                <Icon name="cash" style={{
+                  color: '#ff5722'
+                }}/>
+              </Left>
+              <Body>
+                <Input placeholder="Nombre de tu ahorro" style={{
+                  marginLeft: 12
+                }}></Input>
+              </Body>
+            </ListItem>
 
-          <View style={styles.inputStyle}>
-          <View>
-            <Text style={styles.texto}>Ingresa la cantidad que deseas Ahorrar</Text>
-          </View>
+            <ListItem icon>
+              <Left>
+                <Icon name="calculator" style={{
+                  color: '#ff5722'
+                }}/>
+              </Left>
+              <Body>
+                <Valores/>
+              </Body>
+            </ListItem>
 
-          <View>
-            <Item rounded style={styles.input}>
-              <Input placeholder='$' keyboardType='numeric'/>
-            </Item>
-          </View>
+            <ListItem icon>
+              <Left>
+                <Icon name="calendar" style={{
+                  color: '#2196f3'
+                }}/>
+              </Left>
+              <Body>
+                <Fecha/>
+              </Body>
+            </ListItem>
 
-          <View>
-            <Text style={styles.texto}>Nombre de su Ahorro</Text>
-          </View>
-
-          <View>
-            <Item rounded style={styles.input}>
-              <Input placeholder='Nombre' keyboardType='numeric'/>
-            </Item>
-          </View>
-        </View>
+            <ListItem icon>
+              <Left>
+                <Icon name="paper"/>
+              </Left>
+              <Body>
+                <Text style={{
+                  marginLeft: 15
+                }}>Descripción</Text>
+              </Body>
+            </ListItem>
+          </List>
         </Content>
 
-        <Fab
-          active={this.state.active}
-          direction="up"
-          containerStyle={{}}
-          style={{ backgroundColor: '#5067FF' }}
-          position="bottomRight">
+        <Fab active={this.state.active} direction="up" containerStyle={{}} style={{
+          backgroundColor: '#5067FF'
+        }} position="bottomRight">
           <Icon name="add"/>
         </Fab>
       </Container>
@@ -86,7 +110,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginTop: 10,
     borderColor: '#f08080',
-    marginTop: 10,
+    marginTop: 10
   },
   texto: {
     fontSize: 15,
