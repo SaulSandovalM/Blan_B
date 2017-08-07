@@ -21,16 +21,16 @@ export default class Ingresos extends Component {
             <List>
               <ListItem icon>
                 <Left>
-                  <Icon name="star"/>
+                  <Icon name="calculator" style={{color: '#ff5722'}}/>
                 </Left>
                 <Body>
-                  <Valores/>
+                  <Valores />
                 </Body>
               </ListItem>
 
               <ListItem icon>
                 <Left>
-                  <Icon name="calendar"/>
+                  <Icon name="calendar" style={{color: '#2196f3'}}/>
                 </Left>
                 <Body>
                   <Fecha />
@@ -39,10 +39,10 @@ export default class Ingresos extends Component {
 
               <ListItem icon>
                 <Left>
-                  <Icon name="paper"/>
+                  <Icon name="paper" style={{color: '#3f51b5'}}/>
                 </Left>
                 <Body>
-                  <Text>Descripción</Text>
+                  <Text style={{marginLeft: 15, color:'#424242'}}>Descripción</Text>
                 </Body>
               </ListItem>
             </List>
