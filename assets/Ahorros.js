@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Image, TextInput} from 'react-native';
 import {Container, Content, Card, CardItem, Button, Icon, Left, Body, Fab} from 'native-base';
-import imgLogo from '../imgs/Ahorro.png';
+import imgLogo from '../imgs/Ahorros.png';
 import Cabecera2 from './Cabecera2';
 import {Actions} from 'react-native-router-flux';
 
@@ -13,7 +13,7 @@ export default class Ahorros extends Component {
       text: '$'
     };
   }
-  
+
   onValueChange(value : string) {
     this.setState({selected1: value});
   }

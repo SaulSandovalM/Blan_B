@@ -28,6 +28,7 @@ class Fecha extends Component {
               marginLeft: 0
             },
             dateInput: {
+<<<<<<< HEAD
               alignItems: 'flex-start',
               marginLeft: 15,
               borderColor: 'white',
