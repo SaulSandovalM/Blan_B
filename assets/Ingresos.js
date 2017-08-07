@@ -33,7 +33,7 @@ export default class Ingresos extends Component {
                 <Icon name="calendar" />
               </Left>
               <Body>
-                <Text>03 ago.,2017</Text>
+                <Text>03-04-2017</Text>
               </Body>
 
             </ListItem>
