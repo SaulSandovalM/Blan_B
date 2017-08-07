@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image, TextInput } from 'react-native';
-import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, Card, CardItem, List, ListItem } from 'native-base';
+
+import {StyleSheet, Text, View, Image} from 'react-native';
+import {Container, Content, Header, Icon, Title, Picker, Item, Fab, Input} from 'native-base';
+import {Actions} from 'react-native-router-flux';
+
 import Cabecera2 from './Cabecera2';
 import imgLogo from '../imgs/ingreso.jpg';
 import Valores from '../components/Modal';
 
 export default class Gastos extends Component {
 
-
   render() {
     return (
       <Container style={{backgroundColor: "white"}}>
         <Cabecera2/>
         <Content>
+
           <Image source={imgLogo} style={styles.img}/>
           <Card>
         <CardItem header>
@@ -34,8 +37,7 @@ export default class Gastos extends Component {
               </Left>
               <Body>
                 <Text>03 ago.,2017</Text>
-              </Body>
-
+            </Body>
             </ListItem>
             <ListItem icon>
               <Left>
@@ -48,6 +50,7 @@ export default class Gastos extends Component {
           </List>
         </Card>
         </Content>
+
       </Container>
     );
   }

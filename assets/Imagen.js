@@ -1,11 +1,11 @@
 import React from 'react';
-import {AppRegistry, StyleSheet, View, PixelRatio, TouchableOpacity, Image} from 'react-native';
-import {Header,CheckBox,Button,Form,Right,Thumbnail,H1,Body,Label,Left,List,CardItem,Card,ListItem,Container,Content,Text,Item,Input,Icon} from 'native-base';
+import {AppRegistry, StyleSheet, View, Image} from 'react-native';
+import {Thumbnail, Container, Content, Icon} from 'native-base';
 import ImagePicker from 'react-native-image-picker';
 
 export default class App extends React.Component {
   state = {
-    avatarSource: null,
+    avatarSource: null
   };
 
   selectPhotoTapped() {
@@ -13,10 +13,7 @@ export default class App extends React.Component {
       quality: 1.0,
       maxWidth: 500,
       maxHeight: 500,
-
-      storageOptions: {
-        skipBackup: true
-      }
+      storageOptions: {skipBackup: true}
     };
 
     ImagePicker.showImagePicker(options, (response) => {
@@ -24,22 +21,15 @@ export default class App extends React.Component {
 
       if (response.didCancel) {
         console.log('User cancelled photo picker');
-      }
-      else if (response.error) {
+      } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
+      } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
-        let source = { uri: response.uri };
-
-        // You can also display the image using data:
-        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-        this.setState({
-          avatarSource: source
-        });
+      } else {
+        let source = {
+          uri: response.uri
+        };
+        this.setState({avatarSource: source});
       }
     });
   }
@@ -48,12 +38,12 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         {
-          this.state.avatarSource === null ?
-          <Thumbnail style={styles.tub} square large source={require('../imgs/user.png')} /> :
-          <Thumbnail style={styles.tub} square large source={this.state.avatarSource}/>
+          this.state.avatarSource === null
+          ? <Thumbnail style={styles.tub} square large source={require('../imgs/user.png')}/>
+          : <Thumbnail style={styles.tub} square large source={this.state.avatarSource}/>
         }
         <View style={styles.view}>
-        <Icon onPress={this.selectPhotoTapped.bind(this)} name='camera'/>
+          <Icon onPress={this.selectPhotoTapped.bind(this)} name='camera'/>
         </View>
       </View>
     );
@@ -62,24 +52,24 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   tub: {
-    zIndex:1,
-    position:'absolute',
-    top:-60,
-    borderColor:'white',
-    borderWidth:2.5
+    zIndex: 1,
+    position: 'absolute',
+    top: -60,
+    borderColor: 'white',
+    borderWidth: 2.5
   },
   view: {
-    zIndex:2,
-    left:35,
-    backgroundColor:'white',
-    height:35,
-    borderRadius:15,
-    width:35,
-    justifyContent:'center',
-    alignItems:'center'
+    zIndex: 2,
+    left: 35,
+    backgroundColor: 'white',
+    height: 35,
+    borderRadius: 15,
+    width: 35,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

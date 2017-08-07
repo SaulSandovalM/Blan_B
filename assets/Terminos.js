@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Header, CheckBox, Button, Body, List, CardItem, Card, ListItem, Container, Content, Text, Item, Input, Icon, Image} from 'native-base';
+import {CheckBox, Button, Body, List, CardItem, ListItem, Container, Content, Text, Item, Input, Icon} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Cabecera3 from './Cabecera3';
 
@@ -57,66 +57,66 @@ class Terminos extends Component {
   render() {
     return (
       <Container style={styles.back}>
-        <Content>
-          <Cabecera3/>
-            <CardItem header>
-              <Text style={styles.font}>Términos y condiciones</Text>
-            </CardItem>
+        <Cabecera3/>
+          <Content>
 
-            <CardItem>
-              <Body>
-                <List style={styles.list}>
-                  <Text>Pulse los vínculos a continuación y léalos atentamente.
-                    Al marcar las casillas, usted reconoce que ha leído y que acepta los siguientes términos:</Text>
-                  <ListItem style={styles.ListItem}>
-                    <CheckBox checked={this.state.selected} onPress={this.toggle.bind(this)}/>
-                    <View style={styles.view}>
-                      <Text>Acepto todo</Text>
-                    </View>
-                  </ListItem>
-                </List>
+          <CardItem header>
+            <Text style={styles.font}>Términos y condiciones</Text>
+          </CardItem>
 
-                <ListItem style={styles.listItem}>
-                  <CheckBox checked={this.state.check1} onPress={this.chec1.bind(this)}/>
-                  <View style={styles.view2}>
-                    <Text>He leído y estoy de acuerdo con los Términos y condiciones y los Términos especiales</Text>
+          <CardItem>
+            <Body>
+
+              <List style={styles.list}>
+                <Text>Pulse los vínculos a continuación y léalos atentamente. Al marcar las casillas,
+                  usted reconoce que ha leído y que acepta los siguientes términos:</Text>
+
+                <ListItem style={styles.ListItem}>
+                  <CheckBox checked={this.state.selected} onPress={this.toggle.bind(this)}/>
+                  <View style={styles.view}>
+                    <Text>Acepto todo</Text>
                   </View>
                 </ListItem>
+              </List>
 
-                <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
-                  <CheckBox checked={this.state.check2} onPress={this.chec2.bind(this)}/>
-                  <View style={styles.view2}>
-                    <Text>He leído y estoy de acuerdo con las políticas de privacidad.</Text>
-                  </View>
-                </ListItem>
-                <ListItem style={{borderBottomWidth: 2, borderBottomColor: 'white'}}>
-                  <CheckBox checked={this.state.check3} onPress={this.chec3.bind(this)}/>
-                  <View style={styles.view2}>
-                    <Text>Activar servicios interactivos</Text>
-                  </View>
-                </ListItem>
+              <ListItem style={styles.listItem}>
+                <CheckBox checked={this.state.check1} onPress={this.chec1.bind(this)}/>
+                <View style={styles.view2}>
+                  <Text>He leído y estoy de acuerdo con los Términos y condiciones y los Términos especiales</Text>
+                </View>
+              </ListItem>
 
-                <Button block onPress={()=> Actions.Log()}>
-                  <Text>Acepto</Text>
-                </Button>
-                <Button block style={styles.boton}>
-                  <Text>No acepto</Text>
-                </Button>
-              </Body>
-            </CardItem>
+              <ListItem style={styles.listItem}>
+                <CheckBox checked={this.state.check2} onPress={this.chec2.bind(this)}/>
+                <View style={styles.view2}>
+                  <Text>He leído y estoy de acuerdo con las políticas de privacidad.</Text>
+                </View>
+              </ListItem>
+
+              <ListItem style={styles.listItem}>
+                <CheckBox checked={this.state.check3} onPress={this.chec3.bind(this)}/>
+                <View style={styles.view2}>
+                  <Text>Activar servicios interactivos</Text>
+                </View>
+              </ListItem>
+
+              <Button block onPress={() => Actions.Log()}>
+                <Text>Acepto</Text>
+              </Button>
+
+              <Button block style={styles.boton}>
+                <Text>No acepto</Text>
+              </Button>
+
+            </Body>
+          </CardItem>
         </Content>
       </Container>
     );
   }
 }
+
 const styles = StyleSheet.create({
-  check: {
-    justifyContent: 'space-between'
-  },
-  header: {
-    width: 40,
-    height: 120,
-  },
   back: {
     backgroundColor: "white"
   },
@@ -140,6 +140,9 @@ const styles = StyleSheet.create({
   boton: {
     backgroundColor: 'gray',
     top: 6
+  },
+  check: {
+    justifyContent: 'space-between'
   }
 });
 

@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native';
-import { Button, Icon, Item, Input} from 'native-base';
+import React, {Component} from 'react';
+import {View, StyleSheet} from 'react-native';
 import {firebaseRef} from './Firebase';
 import {Actions} from 'react-native-router-flux';
 import Inicio from '../components/Principal';
 import Login from './Login';
 
 class Log extends Component {
-  state = {loggedIn: null};
+  state = {
+    loggedIn: null
+  };
 
-  componentWillMount(){
-      firebaseRef.auth().onAuthStateChanged((user) => {
+  componentWillMount() {
+    firebaseRef.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({ loggedIn: true });
+        this.setState({loggedIn: true});
       } else {
-        this.setState({ loggedIn: false });
+        this.setState({loggedIn: false});
       }
     });
   }
@@ -22,26 +23,29 @@ class Log extends Component {
   renderContent() {
     switch (this.state.loggedIn) {
       case true:
-        return <Inicio />;
+        return <Inicio/>;
       case false:
-        return <Login />;
+        return <Login/>;
     }
   }
 
-    render(){
-        return(
-          <View style={{flex: 1}}>
-            {this.renderContent()}
-          </View>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.view}>
+        {this.renderContent()}
+      </View>
+    );
+  }
 }
-const styles = StyleSheet.create({
 
+const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%'
+  },
+  view:{
+    flex: 1
   }
-})
+});
 
 export default Log;
