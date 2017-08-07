@@ -10,10 +10,10 @@ export default class HeaderExample extends Component {
       <Container>
       <Cabecera hasTabs />
       <Tabs >
-        <Tab heading="Tab1">
+        <Tab heading="YO">
           <Tab1 />
         </Tab>
-        <Tab heading="Tab2">
+        <Tab heading="NOTICIAS">
           <Tab2 />
         </Tab>
       </Tabs>

@@ -83,8 +83,6 @@ const styles = StyleSheet.create({
   align: {
     flexDirection: 'row',
     justifyContent: 'center',
-    justifyContent: 'space-around',
-    borderColor: 'green'
   },
   borde: {
     width: '33%',
