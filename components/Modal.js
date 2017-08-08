@@ -59,8 +59,8 @@ export default class Example extends Component {
 
         <Button transparent dark onPress={() => this.setState({visibleModal: 1})}>
           {this.state.total == 0
-            ? <Text>Introduzca el valor</Text>
-            : <Text>{"$" + this.state.total.toString()}</Text>}
+            ? <Text style={{color:'#757575'}}>Introduzca el valor</Text>
+            : <Text style={{color:'#757575'}}>{"$" + this.state.total.toString()}</Text>}
 
         </Button>
 

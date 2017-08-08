@@ -28,9 +28,14 @@ class Fecha extends Component {
               marginLeft: 0
             },
             dateInput: {
-              marginLeft: 36
-            }
-            // ... You can check the source to find the other keys.
+              alignItems: 'flex-start',
+              marginLeft: 15,
+              borderColor: 'white',
+            },
+            dateText:{
+              color:'#424242'
+            },
+
           }}
           onDateChange={(date) => {this.setState({date: date})}}
         />
