@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { Container, Content, Card, CardItem, Body, Icon, Button } from 'native-base';
+import {AppRegistry, StyleSheet, Text, View, Dimensions, Image} from 'react-native';
+import {Container, Content, Card, CardItem, Body, Icon, Button} from 'native-base';
 import Footers from '../assets/Footers';
 import {Actions} from 'react-native-router-flux';
 import Grafica from '../assets/Grafica';
@@ -8,9 +8,9 @@ import Grafica from '../assets/Grafica';
 export default class tabOne extends Component {
   render() {
     return (
-      <Container style={{backgroundColor: "white"}}>
+      <Container style={styles.back}>
         <Content>
-          <Card style={{ alignItems: 'center', height: 250 }}>
+          <Card style={styles.card}>
             <CardItem header>
               <Text>Ser mas ahorrativo</Text>
             </CardItem>
@@ -20,17 +20,12 @@ export default class tabOne extends Component {
             </CardItem>
           </Card>
 
-          <Card style={{
-            alignItems: 'center',
-            height: 200,
-          }}>
+          <Card style={styles.card2}>
             <CardItem header>
               <Icon active name="chatbubbles"/>
               <Text style={styles.texto}>Dinero</Text>
             </CardItem>
-            <CardItem style={{
-              alignItems: 'center'
-            }}>
+            <CardItem style={styles.cardi}>
               <Text>
                 Es hora de ahorrar
               </Text>
@@ -42,34 +37,50 @@ export default class tabOne extends Component {
 
           <View style={styles.align}>
             <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ingresos()} style={styles.boton}>
-              <Icon name='cash' />
-                <Text>Ingresos</Text>
-            </Button>
-          </Card>
+              <Button iconLeft transparent onPress={() => Actions.Ingresos()} style={styles.boton}>
+                <Image source={require('../imgs/Ingresos.png')} style={styles.img}/>
+              </Button>
+              <Text>Ingresos</Text>
+            </Card>
 
-          <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Gastos()} style={styles.boton}>
-              <Icon name='alert'/>
-                <Text>Gastos</Text>
-            </Button>
-          </Card>
+            <Card style={styles.borde}>
+              <Button style={styles.boton} transparent onPress={() => Actions.Gastos()}>
+                <Image source={require('../imgs/Gastos.png')} style={styles.img}/>
+              </Button>
+              <Text>Gastos</Text>
+            </Card>
 
-          <Card style={styles.borde}>
-            <Button iconLeft transparent onPress={()=>Actions.Ahorros()} style={styles.boton} >
-              <Icon name='beaker' />
-                <Text>Ahorros</Text>
-            </Button>
-          </Card>
+            <Card style={styles.borde}>
+              <Button iconLeft transparent onPress={() => Actions.Ahorros()} style={styles.boton}>
+                <Image source={require('../imgs/Ahorros.png')} style={styles.img}/>
+              </Button>
+              <Text>Ahorros</Text>
+            </Card>
           </View>
         </Content>
       </Container>
-
     );
   }
 }
 
 const styles = StyleSheet.create({
+  back: {
+    backgroundColor: "white"
+  },
+  card: {
+    alignItems: 'center',
+    height: 250
+  },
+  card2: {
+    alignItems: 'center',
+    height: 200
+  },
+  cardi: {
+    alignItems: 'center'
+  },
+  boton: {
+    alignSelf: 'center'
+  },
   texto: {
     color: "green",
     fontSize: 12
@@ -83,14 +94,17 @@ const styles = StyleSheet.create({
   },
   align: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    justifyContent: 'space-around',
-    borderColor: 'green'
+    justifyContent: 'center'
   },
   borde: {
     width: '33%',
     height: 100,
+    alignItems: 'center',
     justifyContent: 'center'
+  },
+  img: {
+    width: 50,
+    height: 50
   }
 });
 

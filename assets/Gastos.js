@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 import {StyleSheet, Text, View, Image} from 'react-native';
-import {Container, Content, Header, Icon, Title, Picker, Item, Fab, Input} from 'native-base';
+import {Container, Content,Card,CardItem,List,Left,ListItem,Body, Header, Icon, Title, Picker, Item, Fab, Input} from 'native-base';
 import {Actions} from 'react-native-router-flux';
-
 import Cabecera2 from './Cabecera2';
-import imgLogo from '../imgs/ingreso.jpg';
 import Valores from '../components/Modal';
+import Fecha from '../components/Fecha';
+import Modalcat from '../components/Modalcat';
 
 export default class Gastos extends Component {
 
@@ -16,19 +16,19 @@ export default class Gastos extends Component {
         <Cabecera2/>
         <Content>
 
-          <Image source={imgLogo} style={styles.img}/>
+
           <Card>
         <CardItem header>
-            <Text>Nuevo gasto</Text>
+            <Text>Gasto</Text>
           </CardItem>
 
           <List>
             <ListItem icon>
               <Left>
-                <Icon name="star" />
+                <Icon name="calculator" style={{color: '#ff5722'}}/>
               </Left>
               <Body>
-                <Valores/>
+                <Valores />
               </Body>
             </ListItem>
             <ListItem icon>
@@ -36,19 +36,22 @@ export default class Gastos extends Component {
                 <Icon name="calendar" />
               </Left>
               <Body>
-                <Text>03 ago.,2017</Text>
+                <Fecha/>
             </Body>
             </ListItem>
             <ListItem icon>
               <Left>
                 <Icon name="paper" />
               </Left>
-              <Body>
-                <Text>Descripción</Text>
+              <Body >
+                 <Input style={{marginLeft:10, color:'#757575'}} placeholder='Descripción'/>
               </Body>
             </ListItem>
+            <Modalcat/>
+
           </List>
         </Card>
+
         </Content>
 
       </Container>
