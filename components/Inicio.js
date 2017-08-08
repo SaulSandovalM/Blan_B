@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs } from 'native-base';
 import Tab1 from './tabOne';
@@ -17,7 +18,6 @@ export default class HeaderExample extends Component {
           <Tab2 />
         </Tab>
       </Tabs>
-      </Container>
     );
   }
 }

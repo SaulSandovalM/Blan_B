@@ -34,7 +34,7 @@ export default class Ingresos extends Component {
                   <Icon name="paper"/>
                 </Left>
                 <Body >
-                  <Input style={{marginLeft:10, color:'#757575'}} placeholder='Descripción'/>
+                  <Input style={{marginLeft:10,  color:'#757575'}} placeholder='Descripción'/>
                 </Body>
               </ListItem>
 
